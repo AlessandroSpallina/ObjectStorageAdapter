@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.localhostgang.unict</groupId>
-	<artifactId>objectstorageadapter</artifactId>
+	<artifactId>filemanagementservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>objectstorageadapter</name>
+	<name>filemanagementservice</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -47,7 +47,6 @@
 		</dependency>
 	</dependencies>
 
-
 	<profiles>
 		<profile>
 			<id>development</id>
@@ -80,4 +79,5 @@
 		</profile>
 
 	</profiles>
+
 </project>

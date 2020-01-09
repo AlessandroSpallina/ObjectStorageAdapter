@@ -1,7 +1,7 @@
 version: '3'
 services:
         objectstorageadapter:
-                image: objectstorageadapter-dev:v0
+                image: fms:v0
                 restart: always
                 links:
                         - mariadb

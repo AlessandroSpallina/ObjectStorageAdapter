@@ -1,4 +1,0 @@
-FROM java:8
-WORKDIR /app
-ADD ./target/objectstorageadapter-0.0.1-SNAPSHOT.jar ./objectstorageadapter-dev.jar
-CMD java -jar objectstorageadapter-dev.jar
