@@ -11,8 +11,8 @@ public class FileManagementController {
     private UserRepository repository;
 
     /*@GetMapping("/")
-    public List<File>getFiles() {
-
+    public String getFiles() {
+        return "ciao";
     }*/
 
     @GetMapping("/ping")
