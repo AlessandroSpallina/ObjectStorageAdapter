@@ -21,5 +21,16 @@ services:
                 environment:
                         MYSQL_ROOT_PASSWORD: example
                         MYSQL_DATABASE: fms
+        phpmyadmin:
+                image: phpmyadmin/phpmyadmin
+                restart: always
+                links:
+                        - db
+                ports:
+                        - "8082:80"
+                environment:
+                        PMA_HOST: db
+                        PMA_USER: root
+                        PMA_PASSWORD: example
 
 
