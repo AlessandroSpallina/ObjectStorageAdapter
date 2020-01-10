@@ -1,7 +1,7 @@
 package com.localhostgang.unict.filemanagementservice.controller;
 
 import com.localhostgang.unict.filemanagementservice.entity.User;
-import com.localhostgang.unict.filemanagementservice.entity.UserRepository;
+import com.localhostgang.unict.filemanagementservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,13 +11,17 @@ import java.util.Collections;
 public class UserController {
 
     @Autowired
-    UserRepository repository;
+    UserService userService;
 
     @PostMapping("/register")
     public @ResponseBody User register(@RequestBody User user) {
-        user.setRoles(Collections.singletonList("USER"));
-        return repository.save(user);
+        return userService.register(user);
     }
 
+    @GetMapping("/provami")
+    public String provami() {
+        return "esisto";
+    }
+/**/
 
 }
