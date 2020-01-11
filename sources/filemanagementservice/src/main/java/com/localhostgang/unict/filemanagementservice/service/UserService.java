@@ -2,6 +2,7 @@ package com.localhostgang.unict.filemanagementservice.service;
 
 import com.localhostgang.unict.filemanagementservice.entity.User;
 import com.localhostgang.unict.filemanagementservice.entity.UserRepository;
+import io.minio.MinioClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,15 +18,18 @@ public class UserService {
     UserRepository repository;
 
     public User register(User user) {
+        //MinioClient mc = new MinioClient("http://")
+
+
         user.setRoles(Collections.singletonList("USER"));
         return repository.save(user);
     }
 
-    public User findByEmail(String email) {
+    /*public User findByEmail(String email) {
         return repository.findByEmail(email);
-    }
+    }*/
 
-    public List<String> getRole(User user) {
+    /*public List<String> getRole(User user) {
         return user.getRoles();
-    }
+    }*/
 }
