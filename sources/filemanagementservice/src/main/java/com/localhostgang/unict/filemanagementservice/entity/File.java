@@ -18,6 +18,26 @@ public class File {
 
     private String author;
 
+    private String objectname;
+
+    private String bucket;
+
+    public String getObjectname() {
+        return objectname;
+    }
+
+    public void setObjectname(String objectname) {
+        this.objectname = objectname;
+    }
+
+    public String getBucket() {
+        return bucket;
+    }
+
+    public void setBucket(String bucket) {
+        this.bucket = bucket;
+    }
+
     public String getAuthor() {
         return author;
     }
