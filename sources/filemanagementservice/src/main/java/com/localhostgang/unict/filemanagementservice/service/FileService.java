@@ -41,6 +41,14 @@ public class FileService {
         return true;
     }
 
+    public Iterable<File> isOwner (String email) {
+        User user = userRepository.findByEmail(email);
+        if(user.getRoles().contains("ADMIN")) {
+            return fileRepository.findAll();
+        }
+        return fileRepository.getFilesByOwner(user);
+    }
+
     /*
     // per Admin
     public Iterable<File> getAllFiles () {

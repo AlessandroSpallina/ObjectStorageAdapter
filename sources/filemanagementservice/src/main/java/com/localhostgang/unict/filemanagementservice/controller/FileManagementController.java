@@ -31,6 +31,20 @@ public class FileManagementController {
         return "il login funziona correttamente\n (sei loggato come:" + principal.getName() +", "+ auth.getAuthorities()+")";
     }
 */
+
+    // get #2
+    @GetMapping(path = "/")
+    public ResponseEntity<Iterable<File>> getFiles(Authentication auth) {
+        return ResponseEntity.status(200).body(fileService.isOwner(auth.getName()));
+    }
+    
+    // post #3
+    @PostMapping(path="/", consumes="application/json", produces="application/json")
+    public ResponseEntity<File> createMetadataFile(Authentication auth, @RequestBody File file) {
+        File ret = fileService.storeMetadata(file, auth.getName());
+        return ResponseEntity.status(200).body(ret);
+    }
+
     // post #4
     @PostMapping(path = "/{id}", produces="application/json")
     public ResponseEntity<File> createFile(@RequestParam("file") MultipartFile f, Authentication auth, @PathVariable Integer id) {
@@ -42,13 +56,6 @@ public class FileManagementController {
 
         // Salva su db objectname e bucket; risponde col file creato
         return ResponseEntity.status(200).body(new File());
-    }
-
-    // post #3
-    @PostMapping(path="/", consumes="application/json", produces="application/json")
-    public ResponseEntity<File> createMetadataFile(Authentication auth, @RequestBody File file) {
-        File ret = fileService.storeMetadata(file, auth.getName());
-        return ResponseEntity.status(200).body(ret);
     }
 
     /*
