@@ -49,6 +49,17 @@ public class FileService {
         return fileRepository.getFilesByOwner(user);
     }
 
+    public Integer getFileLink (String email, Integer id) {
+        User user = userRepository.findByEmail(email);
+        if(!fileRepository.findById(id).isPresent()){
+            return 404;
+        }
+        if(!user.getId().equals(fileRepository.findById(id)) && user.getRoles().contains("USER")) {
+            return 404;
+        }
+        return 301;
+    }
+
     /*
     // per Admin
     public Iterable<File> getAllFiles () {

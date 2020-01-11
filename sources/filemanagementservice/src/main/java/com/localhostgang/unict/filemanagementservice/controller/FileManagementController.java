@@ -17,7 +17,6 @@ import java.security.Principal;
 public class FileManagementController {
     @Autowired
     private FileService fileService;
-    private UserService userService;
 
     @GetMapping("/ping")
     public String ping() {
@@ -32,12 +31,18 @@ public class FileManagementController {
     }
 */
 
+    // get #1
+    @GetMapping(path = "/{id}") // l'id della prima get è quello dei files che sono stati inseriti da un utente
+    public ResponseEntity<String> getFileLink(Authentication auth, @RequestBody Integer id) {
+        return ResponseEntity.status(fileService.getFileLink(auth.getName(), id)).build();
+    }
+
     // get #2
     @GetMapping(path = "/")
     public ResponseEntity<Iterable<File>> getFiles(Authentication auth) {
         return ResponseEntity.status(200).body(fileService.isOwner(auth.getName()));
     }
-    
+
     // post #3
     @PostMapping(path="/", consumes="application/json", produces="application/json")
     public ResponseEntity<File> createMetadataFile(Authentication auth, @RequestBody File file) {
