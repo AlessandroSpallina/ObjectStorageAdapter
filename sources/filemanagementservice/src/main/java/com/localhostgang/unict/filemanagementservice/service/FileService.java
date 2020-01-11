@@ -34,6 +34,13 @@ public class FileService {
         return fileRepository.save(file);
     }
 
+    public boolean isFileOwned (Integer id, String email) {
+        Optional<File> file = fileRepository.findById(id);
+        if(!file.isPresent()) return false;
+        if(!file.get().getOwner().getEmail().equals(email)) return false;
+        return true;
+    }
+
     /*
     // per Admin
     public Iterable<File> getAllFiles () {

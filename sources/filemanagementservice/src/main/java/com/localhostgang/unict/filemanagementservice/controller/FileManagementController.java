@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.security.Principal;
@@ -30,7 +31,20 @@ public class FileManagementController {
         return "il login funziona correttamente\n (sei loggato come:" + principal.getName() +", "+ auth.getAuthorities()+")";
     }
 */
+    // post #4
+    @PostMapping(path = "/{id}", produces="application/json")
+    public ResponseEntity<File> createFile(@RequestParam("file") MultipartFile f, Authentication auth, @PathVariable Integer id) {
+        if(!fileService.isFileOwned(id, auth.getName())) {
+            return ResponseEntity.status(400).build();
+        }
 
+        // MinIO store
+
+        // Salva su db objectname e bucket; risponde col file creato
+        return ResponseEntity.status(200).body(new File());
+    }
+
+    // post #3
     @PostMapping(path="/", consumes="application/json", produces="application/json")
     public ResponseEntity<File> createMetadataFile(Authentication auth, @RequestBody File file) {
         File ret = fileService.storeMetadata(file, auth.getName());
