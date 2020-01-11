@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
+import java.util.List;
 
 @Service
 @Transactional
@@ -20,4 +21,11 @@ public class UserService {
         return repository.save(user);
     }
 
+    public User findByEmail(String email) {
+        return repository.findByEmail(email);
+    }
+
+    public List<String> getRole(User user) {
+        return user.getRoles();
+    }
 }

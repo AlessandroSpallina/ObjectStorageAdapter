@@ -16,9 +16,20 @@ public class File {
     @NotNull(message = "Mandatory file paramether")
     private String filename;
 
+    private String author;
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public Integer getId() {
         return id;
     }
+
 
     public void setId(Integer id) {
         this.id = id;
