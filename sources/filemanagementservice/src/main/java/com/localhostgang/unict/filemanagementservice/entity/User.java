@@ -27,6 +27,26 @@ public class User {
     @ElementCollection
     private List<String> roles;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }

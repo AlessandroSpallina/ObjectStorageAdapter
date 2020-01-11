@@ -19,7 +19,7 @@ public class UserController {
         return userService.register(user);
     }
 
-    @GetMapping("/provami")
+    @GetMapping("/utente")
     public @ResponseBody String provami() {
         return "esisto";
     }
