@@ -33,7 +33,7 @@ public class FileManagementController {
 
     // get #1
     @GetMapping(path = "/{id}") // l'id della prima get è quello dei files che sono stati inseriti da un utente
-    public ResponseEntity<String> getFileLink(Authentication auth, @RequestBody Integer id) {
+    public ResponseEntity<String> getFileLink(Authentication auth, @PathVariable Integer id) {
 
         if(!fileService.fileExists(id))
             return ResponseEntity.status(404).build();
