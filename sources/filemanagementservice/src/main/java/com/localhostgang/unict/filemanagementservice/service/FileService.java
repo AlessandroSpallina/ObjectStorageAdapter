@@ -42,15 +42,6 @@ public class FileService {
     @Value("${fms.minio_default_bucket}")
     private String minio_default_bucket;
 
-    /*
-    public Optional<File> getFileById(Integer id) {
-        return fileRepository.findById(id);
-    }
-
-    public Iterable<File> getFileByEmail (String email) {
-        return fileRepository.getFilesByOwner(userRepository.findByEmail(email));
-    }
-    */
 
     public File storeMetadata (File file, String email) { // auth.getname() restituisce proprio l'email
         User user = userRepository.findByEmail(email);
@@ -73,7 +64,7 @@ public class FileService {
             }
 
             File toSave = temp_file.get();
-            toSave.setObjectname(objname.toString());
+            toSave.setObjectname(objname.toString() + "_" + f.getOriginalFilename());
             toSave.setBucket(minio_default_bucket);
 
             return fileRepository.save(toSave);
@@ -83,6 +74,15 @@ public class FileService {
         return new File();
     }
 
+
+    public boolean fileExists (Integer id) {
+        Optional<File> file = fileRepository.findById(id);
+        if(file.isPresent())
+            return true;
+        else
+            return false;
+    }
+
     public boolean isFileOwned (Integer id, String email) {
         Optional<File> file = fileRepository.findById(id);
         if(!file.isPresent()) return false;
@@ -90,23 +90,26 @@ public class FileService {
         return true;
     }
 
-    public Iterable<File> isOwner (String email) {
+
+
+    public Iterable<File> listFilesOwned (String email) {
         User user = userRepository.findByEmail(email);
-        if(user.getRoles().contains("ADMIN")) {
-            return fileRepository.findAll();
-        }
         return fileRepository.getFilesByOwner(user);
     }
 
-    public Integer getFileLink (String email, Integer id) {
-        User user = userRepository.findByEmail(email);
-        if(!fileRepository.findById(id).isPresent()){
-            return 404;
+    public Iterable<File> listAllFiles() {
+        return fileRepository.findAll();
+    }
+
+    public String getFileLink (Integer id) {
+        try {
+            MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
+            Optional<File> toFind = fileRepository.findById(id);
+            return mc.presignedGetObject(toFind.get().getBucket(), toFind.get().getObjectname());
+        } catch (InvalidEndpointException | InvalidPortException | InvalidKeyException | NoSuchAlgorithmException | NoResponseException | InvalidResponseException | XmlPullParserException | InvalidBucketNameException | InvalidExpiresRangeException | InsufficientDataException | ErrorResponseException | InternalException | IOException e) {
+            e.printStackTrace();
         }
-        if(!user.getId().equals(fileRepository.findById(id)) && user.getRoles().contains("USER")) {
-            return 404;
-        }
-        return 301;
+        return "https://zoomquilt.org/";
     }
 
     public void deleteFile (Integer id) {
