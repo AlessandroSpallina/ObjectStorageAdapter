@@ -57,6 +57,7 @@ public class FileManagementController {
             return ResponseEntity.status(400).build();
         }
 
+        fileService.storeFile(id, f);
         // MinIO store
 
         // Salva su db objectname e bucket; risponde col file creato

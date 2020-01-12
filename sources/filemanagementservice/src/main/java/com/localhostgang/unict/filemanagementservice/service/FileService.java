@@ -4,9 +4,14 @@ import com.localhostgang.unict.filemanagementservice.entity.File;
 import com.localhostgang.unict.filemanagementservice.entity.FileRepository;
 import com.localhostgang.unict.filemanagementservice.entity.User;
 import com.localhostgang.unict.filemanagementservice.entity.UserRepository;
+import io.minio.MinioClient;
+import io.minio.errors.InvalidEndpointException;
+import io.minio.errors.InvalidPortException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Optional;
 
@@ -17,6 +22,18 @@ public class FileService {
     private FileRepository fileRepository;
     @Autowired
     private UserRepository userRepository;
+
+    @Value("${fms.minio_id}")
+    private String minio_id;
+
+    @Value("${fms.minio_pass}")
+    private String minio_pass;
+
+    @Value("${fms.minio_host}")
+    private String minio_host;
+
+    @Value("${fms.minio_port}")
+    private String minio_port;
 
     /*
     public Optional<File> getFileById(Integer id) {
@@ -32,6 +49,16 @@ public class FileService {
         User user = userRepository.findByEmail(email);
         file.setOwner(user);
         return fileRepository.save(file);
+    }
+
+    public File storeFile (Integer id, MultipartFile f) {
+        try {
+            MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
+            mc.putObject();
+            // findme continua qui
+        } catch (InvalidEndpointException | InvalidPortException e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean isFileOwned (Integer id, String email) {

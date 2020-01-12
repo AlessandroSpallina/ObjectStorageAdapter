@@ -15,7 +15,12 @@ services:
                         MYSQL_ROOT_PASSWORD: example
                         MYSQL_HOST: db
                         MYSQL_PORT: 3306
-                        MYSQL_DBNAME: fms       
+                        MYSQL_DBNAME: fms
+                        MINIO_ACCESS_KEY: fms
+                        MINIO_SECRET_KEY: example1    
+                        MINIO_HOST: storage
+                        MINIO_PORT: 9000
+                        MINIO_DEFAULT_BUCKET: fms-default
         db:
                 image: mysql
 #                command: --default-authentication-plugin=mysql_native_password
