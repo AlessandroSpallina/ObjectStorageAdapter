@@ -21,6 +21,17 @@ services:
                         MINIO_HOST: storage
                         MINIO_PORT: 9000
                         MINIO_DEFAULT_BUCKET: fms-default
+        apigateway:
+                image: apigw:v0
+                restart: always
+                ports: 
+                        - "9090:8080"
+                links:
+                        - filemanagementservice
+                        - storage
+                environment:
+                        FMS_HOST: filemanagementservice
+                        FMS_PORT: 8080
         db:
                 image: mysql
 #                command: --default-authentication-plugin=mysql_native_password
