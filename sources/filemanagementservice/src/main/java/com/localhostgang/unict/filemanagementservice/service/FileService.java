@@ -4,6 +4,7 @@ import com.localhostgang.unict.filemanagementservice.entity.File;
 import com.localhostgang.unict.filemanagementservice.entity.FileRepository;
 import com.localhostgang.unict.filemanagementservice.entity.User;
 import com.localhostgang.unict.filemanagementservice.entity.UserRepository;
+import com.localhostgang.unict.filemanagementservice.util.Miscellaneous;
 import io.minio.MinioClient;
 import io.minio.errors.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,7 +64,7 @@ public class FileService {
 
             // viene calcolato un hash univoco da salvare in objectname per evitare collisioni sul bucket
             Integer objname = (id.toString() + f.getOriginalFilename()).hashCode();
-            mc.putObject(minio_default_bucket, objname.toString(), f.toString());
+            mc.putObject(minio_default_bucket, objname.toString(), Miscellaneous.MultipartToJavaFile(f).toString());
 
             Optional<File> temp_file = fileRepository.findById(id);
 
