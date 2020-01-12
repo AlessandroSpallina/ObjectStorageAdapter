@@ -112,4 +112,13 @@ public class FileService {
         return "https://zoomquilt.org/";
     }
 
+    public void deleteFile (Integer id) {
+        fileRepository.deleteById(id);
+    }
+
+    /*
+    // per Admin
+    public Iterable<File> getAllFiles () {
+        return fileRepository.findAll();
+    } */
 }

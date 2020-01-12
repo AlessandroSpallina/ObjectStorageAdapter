@@ -81,6 +81,17 @@ public class FileManagementController {
         return ResponseEntity.status(200).body(ret);
     }
 
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<String> deleteFile(Authentication auth, @PathVariable Integer id) {
+
+        if(auth.getAuthorities().contains("ADMIN") || fileService.isFileOwned(id, auth.getName())) {
+            fileService.deleteFile(id);
+            return ResponseEntity.status(200).build();
+        }
+
+        return ResponseEntity.status(404).build();
+    }
+
     /*
     @GetMapping("/")
     public Iterable<File> getFileById(Authentication auth, @PathVariable Integer id) throws IOException {
