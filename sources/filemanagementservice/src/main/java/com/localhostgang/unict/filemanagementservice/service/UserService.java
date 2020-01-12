@@ -34,16 +34,8 @@ public class UserService {
             e.printStackTrace();
         }*/
 
-
         user.setRoles(Collections.singletonList("USER"));
         return repository.save(user);
     }
 
-    /*public User findByEmail(String email) {
-        return repository.findByEmail(email);
-    }*/
-
-    /*public List<String> getRole(User user) {
-        return user.getRoles();
-    }*/
 }

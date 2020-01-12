@@ -23,14 +23,6 @@ public class FileManagementController {
         return "pong";
     }
 
-    /*
-    @GetMapping("/")
-    public String index(Authentication auth, Principal principal) {
-        //UserDetails userDetails = (UserDetails) principal;
-        return "il login funziona correttamente\n (sei loggato come:" + principal.getName() +", "+ auth.getAuthorities()+")";
-    }
-*/
-
     // get #1
     @GetMapping(path = "/{id}") // l'id della prima get è quello dei files che sono stati inseriti da un utente
     public ResponseEntity<String> getFileLink(Authentication auth, @PathVariable Integer id) {
@@ -81,26 +73,16 @@ public class FileManagementController {
         return ResponseEntity.status(200).body(ret);
     }
 
+    // delete #5
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<String> deleteFile(Authentication auth, @PathVariable Integer id) {
 
         if(auth.getAuthorities().contains("ADMIN") || fileService.isFileOwned(id, auth.getName())) {
-            fileService.deleteFile(id);
+            fileService.deleteMetadataAndFile(id);
             return ResponseEntity.status(200).build();
         }
 
         return ResponseEntity.status(404).build();
     }
 
-    /*
-    @GetMapping("/")
-    public Iterable<File> getFileById(Authentication auth, @PathVariable Integer id) throws IOException {
-        // User user = userService.findByEmail(auth.getName());
-        if(auth.getAuthorities().contains("ADMIN")) {
-            return fileService.getAllFiles();
-        }
-        else {
-            return null;
-        }
-    } */
 }

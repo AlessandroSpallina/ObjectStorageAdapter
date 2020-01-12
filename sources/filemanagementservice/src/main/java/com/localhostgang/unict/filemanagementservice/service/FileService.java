@@ -112,8 +112,17 @@ public class FileService {
         return "https://zoomquilt.org/";
     }
 
-    public void deleteFile (Integer id) {
-        fileRepository.deleteById(id);
+    public void deleteMetadataAndFile (Integer id) {
+        try {
+            MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
+            Optional<File> toDelete = fileRepository.findById(id);
+            String bucket_name = toDelete.get().getBucket();
+            String obj_name = toDelete.get().getObjectname();
+            mc.removeObject(bucket_name, obj_name);
+            fileRepository.deleteById(id);
+        } catch (InvalidEndpointException | InvalidPortException | InvalidKeyException | NoSuchAlgorithmException | NoResponseException | InvalidResponseException | XmlPullParserException | InvalidBucketNameException | InvalidArgumentException | InsufficientDataException | ErrorResponseException | InternalException | IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /*

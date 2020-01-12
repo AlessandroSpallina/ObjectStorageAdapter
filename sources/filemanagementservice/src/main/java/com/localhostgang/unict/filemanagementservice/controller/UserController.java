@@ -20,10 +20,4 @@ public class UserController {
         return userService.register(user);
     }
 
-    @GetMapping("/utente")
-    public @ResponseBody String provami() {
-        return "esisto";
-    }
-/**/
-
 }
