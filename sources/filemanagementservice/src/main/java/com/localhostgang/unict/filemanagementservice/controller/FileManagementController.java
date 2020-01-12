@@ -34,13 +34,32 @@ public class FileManagementController {
     // get #1
     @GetMapping(path = "/{id}") // l'id della prima get è quello dei files che sono stati inseriti da un utente
     public ResponseEntity<String> getFileLink(Authentication auth, @RequestBody Integer id) {
-        return ResponseEntity.status(fileService.getFileLink(auth.getName(), id)).build();
+
+        if(!fileService.fileExists(id))
+            return ResponseEntity.status(404).build();
+
+        if(auth.getAuthorities().contains("ADMIN")) {
+            return ResponseEntity.status(301).body(fileService.getFileLink(id));
+        } else {
+            if(fileService.isFileOwned(id, auth.getName())) {
+                return ResponseEntity.status(301).body(fileService.getFileLink(id));
+            } else {
+                return ResponseEntity.status(404).build();
+            }
+        }
     }
 
     // get #2
     @GetMapping(path = "/")
     public ResponseEntity<Iterable<File>> getFiles(Authentication auth) {
-        return ResponseEntity.status(200).body(fileService.isOwner(auth.getName()));
+        Iterable<File> toRet;
+
+        if(auth.getAuthorities().contains("ADMIN")) {
+            toRet = fileService.listAllFiles();
+        } else {
+            toRet = fileService.listFilesOwned(auth.getName());
+        }
+        return ResponseEntity.status(200).body(toRet);
     }
 
     // post #3
