@@ -57,11 +57,9 @@ public class FileManagementController {
             return ResponseEntity.status(400).build();
         }
 
-        fileService.storeFile(id, f);
-        // MinIO store
+        File ret = fileService.storeFile(id, f);
 
-        // Salva su db objectname e bucket; risponde col file creato
-        return ResponseEntity.status(200).body(new File());
+        return ResponseEntity.status(200).body(ret);
     }
 
     /*
