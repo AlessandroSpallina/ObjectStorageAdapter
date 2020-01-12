@@ -64,7 +64,7 @@ public class FileService {
 
             // viene calcolato un hash univoco da salvare in objectname per evitare collisioni sul bucket
             Integer objname = (id.toString() + f.getOriginalFilename()).hashCode();
-            mc.putObject(minio_default_bucket, objname.toString(), Miscellaneous.MultipartToJavaFile(f).toString());
+            mc.putObject(minio_default_bucket, objname.toString() + "_" + f.getOriginalFilename(), Miscellaneous.MultipartToJavaFile(f).toString());
 
             Optional<File> temp_file = fileRepository.findById(id);
 
