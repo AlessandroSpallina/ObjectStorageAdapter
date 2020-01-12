@@ -109,6 +109,10 @@ public class FileService {
         return 301;
     }
 
+    public void deleteFile (Integer id) {
+        fileRepository.deleteById(id);
+    }
+
     /*
     // per Admin
     public Iterable<File> getAllFiles () {
