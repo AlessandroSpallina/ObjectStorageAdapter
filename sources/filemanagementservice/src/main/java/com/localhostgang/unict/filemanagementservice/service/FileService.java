@@ -68,6 +68,7 @@ public class FileService {
             toSave.setBucket(minio_default_bucket);
 
             return fileRepository.save(toSave);
+            //return new File();
         } catch (Exception e) {
             e.printStackTrace();
         }
