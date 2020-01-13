@@ -49,7 +49,8 @@ public class FileService {
         return fileRepository.save(file);
     }
 
-    public File storeFile (Integer id, MultipartFile f) {   // @findme : buggata, da testare
+    public File storeFile (Integer id, MultipartFile f) {
+
         try {
             MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
 
