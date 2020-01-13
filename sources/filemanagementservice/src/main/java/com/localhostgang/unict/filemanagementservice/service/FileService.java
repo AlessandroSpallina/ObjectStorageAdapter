@@ -49,7 +49,7 @@ public class FileService {
         return fileRepository.save(file);
     }
 
-    public File storeFile (Integer id, MultipartFile f) {
+    public File storeFile (Integer id, MultipartFile f) {   // @findme : buggata, da testare
         try {
             MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
 
@@ -58,6 +58,8 @@ public class FileService {
             mc.putObject(minio_default_bucket, objname.toString() + "_" + f.getOriginalFilename(), Miscellaneous.MultipartToJavaFile(f).toString());
 
             Optional<File> temp_file = fileRepository.findById(id);
+
+            System.out.println(temp_file.toString());
 
             if(!temp_file.isPresent()) { // qui non dovrebbe mai entrarci, storeFile() andrebbe usato solo dopo aver storato i metadati!
                 throw new Exception();
@@ -72,7 +74,9 @@ public class FileService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return new File();
+        File gay = new File();
+        gay.setAuthor("dio");
+        return gay;
     }
 
 
