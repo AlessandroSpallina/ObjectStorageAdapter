@@ -59,8 +59,6 @@ public class FileService {
 
             Optional<File> temp_file = fileRepository.findById(id);
 
-            System.out.println(temp_file.toString());
-
             if(!temp_file.isPresent()) { // qui non dovrebbe mai entrarci, storeFile() andrebbe usato solo dopo aver storato i metadati!
                 throw new Exception();
             }
@@ -70,13 +68,10 @@ public class FileService {
             toSave.setBucket(minio_default_bucket);
 
             return fileRepository.save(toSave);
-            //return new File();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        File gay = new File();
-        gay.setAuthor("dio");
-        return gay;
+        return new File();
     }
 
 

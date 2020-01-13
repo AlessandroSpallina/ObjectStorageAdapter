@@ -10,7 +10,7 @@ public class File {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     private User owner;
 
     @NotNull(message = "Mandatory file paramether")
