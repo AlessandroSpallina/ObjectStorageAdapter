@@ -1,5 +1,5 @@
 docker container prune
-docker volume prune
+# docker volume prune
 cd ../filemanagementservice
 docker build -t fms:v0 . -f Dockerfile-dev
 cd ../apigateway
