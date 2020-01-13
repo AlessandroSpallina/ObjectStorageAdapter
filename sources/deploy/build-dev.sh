@@ -1,5 +1,8 @@
 docker container prune
 docker volume prune
-docker build -t fms:v0 . -f ../filemanagementservice/Dockerfile-dev
-docker build -t apigw:v0 . -f ../apigateway/Dockerfile-dev
+cd ../filemanagementservice
+docker build -t fms:v0 . -f Dockerfile-dev
+cd ../apigateway
+docker build -t apigw:v0 . -f Dockerfile-dev
+cd ../deploy
 docker-compose up
