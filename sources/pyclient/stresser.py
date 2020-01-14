@@ -25,12 +25,30 @@ def main():
 
     print("============ STRESSER CLIENT ============")
     print("Testing API:")
-    if(osa.ping().status_code == 200):
+
+    ret = osa.ping().status_code
+    if(ret == 200): # http ok
         print("* Ping: OK")
     else:
-        print("* Ping: FAIL")
+        print("* Ping: FAIL[{}]".format(ret))
 
-    
+    ret = osa.get_file_url(2).status_code
+    if(ret == 301): # http moved permanently
+        print("* (1) GetFile: OK")
+    else:
+        print("* (1) GetFile: FAIL[{}]".format(ret))
+
+    ret = osa.get_file_list().status_code
+    if(ret == 200): # http ok
+        print("* (2) GetFileList: OK")
+    else:
+        print("* (2) GetFileList: FAIL[{}]".format(ret))
+
+    ret = osa.send_metadata_file('video.mp4', 'lbry inc').status_code
+    if(ret == 200): # http ok
+        print("* (3) SendMetadataFile: OK")
+    else:
+        print("* (3) SendMetadataFile: FAIL[{}]".format(ret))
 
 
 
