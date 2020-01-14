@@ -3,17 +3,9 @@ package com.locahostgang.unict.apigateway;
 import com.google.common.io.CharStreams;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
-import org.apache.coyote.Response;
-import org.apache.http.protocol.ResponseContent;
 import org.springframework.stereotype.Component;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Field;
-import java.util.UUID;
 
 @Component
 public class ZuulPostFilter extends ZuulFilter {
