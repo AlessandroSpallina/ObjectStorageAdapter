@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+# osa_lib metrics
+*csv
 # Distribution / packaging
 .Python
 build/
