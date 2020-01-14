@@ -1,0 +1,14 @@
+version: '3'
+services:
+    stresser:
+        build: .
+        volumes:
+            - ./:/app
+        environment:
+                N1: 10
+                N2: 100
+                N3: 50
+                N4: 20
+                P1: 0.9
+                P2: 0.87
+
