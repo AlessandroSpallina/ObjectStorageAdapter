@@ -33,13 +33,15 @@ class ObjectStorageAdapterAPI:
         return requests.post(self._url('/'), headers=headers, data=json.dumps(payload), auth=(self.user, self.pasw))
 
     # POST 4
-    def send_file(self):
-        pass
+    def send_file(self, file_id, path):
+        files = [('file', open(path, 'rb'))]
+        return requests.post(self._url('/{}'.format(file_id)), files=files, auth=(self.user, self.pasw))
 
     # DELETE 5
-    def delete_file(self):
-        pass
+    def delete_file(self, file_id):
+        headers = {'Content-Type':'application/json'}
+        return requests.delete(self._url('/{}'.format(file_id)), headers=headers, auth=(self.user, self.pasw))
 
-    # POST 6
-    def register_user(self):
-        pass
+    # POST 6 [@findme] : not implemented
+    # def register_user(self):
+    #     pass
