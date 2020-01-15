@@ -34,7 +34,7 @@ public class ZuulPreFilter extends ZuulFilter {
 
         //0->39
         String newRequestUrl;
-        if(requestUrl.contains("http://localhost:9091/minio/fms-default/")) {
+        if(requestUrl.contains("http://localhost:9090/minio/fms-default/")) {
             newRequestUrl = "http://storage:9000/fms-default/".concat(requestUrl.substring(40, requestUrl.length()));
             System.out.println("questa è l'url modificata: "+newRequestUrl);
             context.set(newRequestUrl);
