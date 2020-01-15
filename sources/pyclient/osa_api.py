@@ -2,7 +2,7 @@ import os
 import requests
 from requests.auth import HTTPBasicAuth
 import json
-import csv
+#import csv
 
 class ObjectStorageAdapterAPI:
     def __init__(self, user, pasw, endpoint):
@@ -18,9 +18,13 @@ class ObjectStorageAdapterAPI:
 
     def osa_metrics_to_csv(self, path):
         with open(path, 'w', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(['Method', 'Payload Size In', 'Payload Size Out', 'Response Time', 'Status Code'])
-            writer.writerows(self.metrics)
+            file.write('Method,Payload Size In,Payload Size Out,Response Time,Status Code\n')
+            for m in self.metrics:
+                file.write("{},{},{},{},{}\n".format(m[0],m[1],m[2],m[3],m[4]))
+        #with open(path, 'w', newline='') as file:
+        #    writer = csv.writer(file)
+        #    writer.writerow(['Method', 'Payload Size In', 'Payload Size Out', 'Response Time', 'Status Code'])
+        #    writer.writerows(self.metrics)
 
     def ping(self):
         headers = {'Content-Type':'application/json'}

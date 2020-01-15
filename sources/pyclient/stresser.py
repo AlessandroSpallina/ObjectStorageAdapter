@@ -90,7 +90,7 @@ def load4():
 def main():
     print("============ STRESSER CLIENT ============")
 
-    osa = ObjectStorageAdapterAPI('user@a.a', 'user', 'http://192.168.1.123:9090/fms')
+    osa = ObjectStorageAdapterAPI('user@a.a', 'user', 'http://151.97.159.253:9090/fms')
 
     print("\n-> Reading ENV")
     N1 = int(os.environ.get('N1', 1))
