@@ -78,10 +78,24 @@ def load3(osa, N3, duration_seconds, probability_pick_existent, existent_file_id
         duration_seconds -= 1
         time.sleep(1)
 
-def load4():
-    pass
+def load4(osa, N4, probability_pick_existent, existing_files_list):
+    loop_max_iters = N4
+    if len(existing_files_list) < N4:
+        loop_max_iters = len(existing_files_list)
+    for i in range(loop_max_iters):
+        rand = random.randrange(100)
+        if rand < probability_pick_existent * 100:
+            resp = osa.delete_file(existing_files_list.pop())
+        else:
+            resp = osa.delete_file(777) # assumo che file_id 777 non esista (evviva i magic number ignoranti)
 
-
+def _get_existing_files_list(osa):
+    files_list = []
+    resp = osa.get_file_list()
+    if resp.status_code == 200:
+        for f in resp.json():
+            files_list.append(f['id'])
+    return files_list
 
 
 
@@ -103,32 +117,17 @@ def main():
 
     print("\n-> Testing API")
     api_test_print(osa)
-
-    load1(osa, 10)#N1)
+    load1(osa, N1)
     print("\n-> Load1")
-
-    load2(osa, 100, 30)#N2, 30)
+    load2(osa, N2, 30)
     print("\n-> Load2")
-
-    load3(osa, 50, 30, P1, 2, 3)#N3, 30, P1, 2, 3)
+    load3(osa, N3, 30, P1, 2, 3)
     print("\n-> Load3")
-
+    load4(osa, N4, P2, _get_existing_files_list(osa))
+    print("\n-> Load4")
     osa.osa_metrics_to_csv('metrics.csv')
-
-
-
-
-
-
-
-
-
+    print("\n-> Csv metrics")
     print("=========================================")
-
-
-  #print(osa.ping())
-
-
 
 
 main()
