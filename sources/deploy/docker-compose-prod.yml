@@ -1,0 +1,61 @@
+version: '3'
+services:
+        filemanagementservice:
+                image: fms-prod:v0
+                depends_on:
+                        - db
+                restart: always
+#                links:
+#                        - db
+#                        - storage
+#                ports:
+#                        - "8080:8080"
+                environment:
+                        MYSQL_ROOT_USERNAME: root
+                        MYSQL_ROOT_PASSWORD: example
+                        MYSQL_HOST: db
+                        MYSQL_PORT: 3306
+                        MYSQL_DBNAME: fms
+                        MINIO_ACCESS_KEY: fms
+                        MINIO_SECRET_KEY: example1    
+                        MINIO_HOST: storage
+                        MINIO_PORT: 9000
+                        MINIO_DEFAULT_BUCKET: fms-default
+        apigateway:
+                image: apigw-prod:v0
+                restart: always
+                ports: 
+                        - "9090:9090"
+#                links:
+#                        - filemanagementservice
+#                        - storage
+                environment:
+                        FMS_HOST: filemanagementservice
+                        FMS_PORT: 8080
+        db:
+                image: mysql
+                restart: always
+                environment:
+                        MYSQL_ROOT_PASSWORD: example
+                        MYSQL_DATABASE: fms
+                volumes:
+                        - "ds-mysql-volume:/var/lib/mysql"
+        storage:
+                image: minio/minio
+                restart: always
+#                ports:
+#                        - "9000:9000"
+                command: server /data
+                environment:
+                        MINIO_ACCESS_KEY: fms
+                        MINIO_SECRET_KEY: example1
+                volumes:
+                        - "ds-minio-volume:/data"
+                        
+volumes:
+        ds-mysql-volume: {}
+        ds-minio-volume: {}
+                
+                
+
+
