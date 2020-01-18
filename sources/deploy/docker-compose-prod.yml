@@ -4,12 +4,8 @@ services:
                 image: fms-prod:v0
                 depends_on:
                         - db
+                        - storage
                 restart: always
-#                links:
-#                        - db
-#                        - storage
-#                ports:
-#                        - "8080:8080"
                 environment:
                         MYSQL_ROOT_USERNAME: root
                         MYSQL_ROOT_PASSWORD: example
@@ -23,12 +19,11 @@ services:
                         MINIO_DEFAULT_BUCKET: fms-default
         apigateway:
                 image: apigw-prod:v0
+                depends_on:
+                        - filemanagementservice
                 restart: always
                 ports: 
                         - "9090:9090"
-#                links:
-#                        - filemanagementservice
-#                        - storage
                 environment:
                         FMS_HOST: filemanagementservice
                         FMS_PORT: 8080
@@ -41,10 +36,8 @@ services:
                 volumes:
                         - "ds-mysql-volume:/var/lib/mysql"
         storage:
-                image: minio/minio
+                image: minio-custom:v0
                 restart: always
-#                ports:
-#                        - "9000:9000"
                 command: server /data
                 environment:
                         MINIO_ACCESS_KEY: fms
