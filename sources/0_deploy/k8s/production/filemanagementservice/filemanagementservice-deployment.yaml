@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: osa-filemanagementservice
+spec:
+	selector:
+		matchLabels:
+			app: osa-filemanagementservice
+  template:
+    metadata:
+      labels:
+        app: osa-filemanagementservice
+    spec:
+      containers:
+			- name: osa-filemanagementservice
+				image: fms-prod:v0
+				ports:
+				- containerPort: 8080
+				envFrom:
+				- configMapRef:
+				  name: osa-filemanagementservice-env-file
+				- secretRef:
+				  name: osa-filemanagementservice-secret-file
+#				livenessProbe:
+#          httpGet:
+#            path: /ping
+#            port: 8080				  
+      restartPolicy: Always
