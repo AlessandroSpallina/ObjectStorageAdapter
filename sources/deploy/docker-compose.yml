@@ -4,10 +4,8 @@ services:
                 image: fms:v0
                 depends_on:
                         - db
-                restart: always
-                links:
-                        - db
                         - storage
+                restart: always
                 ports:
                         - "8080:8080"
                 environment:
@@ -23,31 +21,27 @@ services:
                         MINIO_DEFAULT_BUCKET: fms-default
         apigateway:
                 image: apigw:v0
+                depends_on:
+                        - filemanagementservice
                 restart: always
                 ports: 
                         - "9090:9090"
-                links:
-                        - filemanagementservice
-                        - storage
                 environment:
                         FMS_HOST: filemanagementservice
                         FMS_PORT: 8080
         db:
                 image: mysql
-#                command: --default-authentication-plugin=mysql_native_password
                 restart: always
                 environment:
                         MYSQL_ROOT_PASSWORD: example
                         MYSQL_DATABASE: fms
-                volumes:
-                        - "ds-mysql-volume:/var/lib/mysql"
+#                volumes:
+#                        - "ds-mysql-volume:/var/lib/mysql"
         phpmyadmin:
                 image: phpmyadmin/phpmyadmin
                 depends_on:
                         - db
                 restart: always
-                links:
-                        - db
                 ports:
                         - "8082:80"
                 environment:
@@ -55,7 +49,7 @@ services:
                         PMA_USER: root
                         PMA_PASSWORD: example
         storage:
-                image: minio/minio
+                image: minio-custom:v0
                 restart: always
                 ports:
                         - "9000:9000"
@@ -63,12 +57,12 @@ services:
                 environment:
                         MINIO_ACCESS_KEY: fms
                         MINIO_SECRET_KEY: example1
-                volumes:
-                        - "ds-minio-volume:/data"
+#                volumes:
+#                        - "ds-minio-volume:/data"
                         
-volumes:
-        ds-mysql-volume: {}
-        ds-minio-volume: {}
+#volumes:
+#        ds-mysql-volume: {}
+#        ds-minio-volume: {}
                 
                 
 
