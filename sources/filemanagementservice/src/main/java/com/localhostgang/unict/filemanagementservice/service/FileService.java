@@ -54,6 +54,10 @@ public class FileService {
         try {
             MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
 
+            if(!mc.bucketExists(minio_default_bucket)) {
+                mc.makeBucket(minio_default_bucket);
+            }
+
             // viene calcolato un hash univoco da salvare in objectname per evitare collisioni sul bucket
             Integer objname = (id.toString() + f.getOriginalFilename()).hashCode();
             mc.putObject(minio_default_bucket, objname.toString() + "_" + f.getOriginalFilename(), Miscellaneous.MultipartToJavaFile(f).toString());
@@ -90,7 +94,6 @@ public class FileService {
         if(!file.get().getOwner().getEmail().equals(email)) return false;
         return true;
     }
-
 
 
     public Iterable<File> listFilesOwned (String email) {
