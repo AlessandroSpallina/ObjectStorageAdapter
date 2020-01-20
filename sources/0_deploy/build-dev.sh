@@ -11,8 +11,8 @@ docker build -t fms:v0 . -f Dockerfile-dev
 cd ../apigateway
 docker build -t apigw:v0 . -f Dockerfile-dev
 
-cd ../minio
-docker build -t minio-custom:v0 .
+#cd ../minio
+#docker build -t minio-custom:v0 .
 
 #cd ../deploy
 #docker-compose up
