@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   name: osa-db
 spec:
-	selector:
-	  matchLabels:
-	    app: osa-db
+  selector:
+    matchLabels:
+      app: osa-db
   template:
     metadata:
       labels:
@@ -18,9 +18,9 @@ spec:
         - containerPort: 3306
         envFrom:
         - configMapRef:
-          name: osa-db-env-file
+            name: osa-db-env-file
         - secretRef:
-          name: osa-db-secret-file
+            name: osa-db-secret-file
         volumeMounts:
         - mountPath: /var/lib/mysql
           name: ds-mysql-volume
