@@ -4,6 +4,6 @@ metadata:
   name: osa-db
 spec:
   ports:
-    - port: 9090
+    - port: 3306
   selector:
     app: osa-db
