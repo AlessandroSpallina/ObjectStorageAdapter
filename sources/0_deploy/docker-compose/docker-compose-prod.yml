@@ -34,7 +34,7 @@ services:
                 volumes:
                         - "ds-mysql-volume:/var/lib/mysql"
         storage:
-                image: minio-custom:v0
+                image: minio/minio
                 restart: always
                 command: server /data
                 environment:

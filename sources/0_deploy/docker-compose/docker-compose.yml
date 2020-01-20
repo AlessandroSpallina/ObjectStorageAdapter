@@ -47,7 +47,7 @@ services:
                         PMA_USER: root
                         PMA_PASSWORD: example
         storage:
-                image: minio-custom:v0
+                image: minio/minio
                 restart: always
                 ports:
                         - "9000:9000"
