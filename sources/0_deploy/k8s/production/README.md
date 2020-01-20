@@ -18,9 +18,10 @@ Run on Minikube.
     eval $(minikube docker-env)
     sh ../../build-prod.sh
     
+    kubectl apply -f ./persistentvolumes
+    
     kubectl apply -f ./db
     kubectl apply -f ./storage
-    kubectl apply -f ./persistentvolumes
     kubectl apply -f ./filemanagementservice
     kubectl apply -f ./apigateway
 ```

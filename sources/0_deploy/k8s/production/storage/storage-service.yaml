@@ -6,6 +6,6 @@ metadata:
     app: osa-storage
 spec:
   ports:
-    port: 9000
+    - port: 9000
   selector:
     app: osa-storage

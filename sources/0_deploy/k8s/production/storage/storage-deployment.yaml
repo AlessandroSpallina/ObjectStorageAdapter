@@ -21,12 +21,10 @@ spec:
         - containerPort: 9000
         envFrom:
         - configMapRef:
-          name: osa-storage-env-file
+            name: osa-storage-env-file
         - secretRef:
-          name: osa-storage-secret-file
-      - args:
-        - server
-        - /data
+            name: osa-storage-secret-file
+        args: ["server", "/data"]
         volumeMounts:
         - mountPath: /data
           name: ds-minio-volume
