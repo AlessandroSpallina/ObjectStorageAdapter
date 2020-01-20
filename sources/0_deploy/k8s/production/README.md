@@ -16,7 +16,9 @@ Run on Minikube.
 
 ```
     eval $(minikube docker-env)
-    sh ../../build-prod.sh
+
+    cd ../../
+    sh build-prod.sh
     
     kubectl apply -f ./persistentvolumes
     
