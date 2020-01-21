@@ -22,5 +22,9 @@ spec:
         backend:
           serviceName: osa-storage
           servicePort: 9000
+      - path: /echo(/|$)(.*) # Note1 at the end of the file
+        backend:
+          serviceName: demo-echo-service
+          servicePort: 80
 
 # Note1:  See https://kubernetes.github.io/ingress-nginx/examples/rewrite/
