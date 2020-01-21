@@ -22,6 +22,9 @@ public class File {
 
     private String bucket;
 
+    @Enumerated(EnumType.STRING)
+    private FileState state;
+
     public String getObjectname() {
         return objectname;
     }
@@ -50,7 +53,6 @@ public class File {
         return id;
     }
 
-
     public void setId(Integer id) {
         this.id = id;
     }
@@ -69,5 +71,13 @@ public class File {
 
     public void setFilename(String filename) {
         this.filename = filename;
+    }
+
+    public FileState getState() {
+        return state;
+    }
+
+    public void setState(FileState state) {
+        this.state = state;
     }
 }
