@@ -6,9 +6,9 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"osa-storage-env-file","creationTimestamp":null},"data":{"MINIO_ACCESS_KEY":"fms"}}
-  creationTimestamp: "2020-01-20T19:16:31Z"
+  creationTimestamp: "2020-01-21T14:07:38Z"
   name: osa-storage-env-file
   namespace: default
-  resourceVersion: "630"
+  resourceVersion: "1073"
   selfLink: /api/v1/namespaces/default/configmaps/osa-storage-env-file
-  uid: c489f47a-c7ec-4fcb-8f3a-ddba00149820
+  uid: 0d7192a2-08ee-4a5a-b888-5608717bb135
