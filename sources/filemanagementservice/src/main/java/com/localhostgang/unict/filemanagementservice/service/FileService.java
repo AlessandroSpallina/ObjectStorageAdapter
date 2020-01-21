@@ -1,9 +1,6 @@
 package com.localhostgang.unict.filemanagementservice.service;
 
-import com.localhostgang.unict.filemanagementservice.entity.File;
-import com.localhostgang.unict.filemanagementservice.entity.FileRepository;
-import com.localhostgang.unict.filemanagementservice.entity.User;
-import com.localhostgang.unict.filemanagementservice.entity.UserRepository;
+import com.localhostgang.unict.filemanagementservice.entity.*;
 import com.localhostgang.unict.filemanagementservice.util.Miscellaneous;
 import io.minio.MinioClient;
 import io.minio.errors.*;
@@ -43,13 +40,63 @@ public class FileService {
     private String minio_default_bucket;
 
 
+    // ========= StateMachine Saga ===========
+    private void waitingUpload_s0(File f) {
+        f.setState(FileState.WAITING_UPLOAD);
+        fileRepository.save(f);
+    }
+
+    private void uploades_s1(File f) {
+        f.setState(FileState.UPLOADES);
+    }
+
+    private void uploadesRollback_s1r(File f){
+        f.setState(FileState.UPLOAD_FAILED);
+
+        // eliminare le copie del file da tutti i minio
+
+
+    }
+
+    private void available_s2(File f){
+        f.setState(FileState.AVAILABLE);
+        fileRepository.save(f);
+    }
+    // ======================================
+
+
     public File storeMetadata (File file, String email) { // auth.getname() restituisce proprio l'email
         User user = userRepository.findByEmail(email);
         file.setOwner(user);
+
+        waitingUpload_s0(file);
+
         return fileRepository.save(file);
     }
 
+    public boolean isWaitingFile(Integer id) {
+        if(fileRepository.findById(id).get().getState() == FileState.WAITING_UPLOAD){
+            return true;
+        }
+
+        return false;
+    }
+
     public File storeFile (Integer id, MultipartFile f) {
+
+        Optional<File> temp_file = fileRepository.findById(id);
+
+        if(!temp_file.isPresent()) { // qui non dovrebbe mai entrarci, storeFile() andrebbe usato solo dopo aver storato i metadati!
+            try {
+                throw new Exception();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        File toSave = temp_file.get();
+
+        uploades_s1(toSave);
 
         try {
             MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
@@ -62,21 +109,21 @@ public class FileService {
             Integer objname = (id.toString() + f.getOriginalFilename()).hashCode();
             mc.putObject(minio_default_bucket, objname.toString() + "_" + f.getOriginalFilename(), Miscellaneous.MultipartToJavaFile(f).toString());
 
-            Optional<File> temp_file = fileRepository.findById(id);
 
-            if(!temp_file.isPresent()) { // qui non dovrebbe mai entrarci, storeFile() andrebbe usato solo dopo aver storato i metadati!
-                throw new Exception();
-            }
-
-            File toSave = temp_file.get();
             toSave.setObjectname(objname.toString() + "_" + f.getOriginalFilename());
             toSave.setBucket(minio_default_bucket);
 
-            return fileRepository.save(toSave);
+            available_s2(toSave);
+
         } catch (Exception e) {
+
+            uploadesRollback_s1r(toSave);
+
             e.printStackTrace();
+        } finally {
+
+            return fileRepository.save(toSave);
         }
-        return new File();
     }
 
 
