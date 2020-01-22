@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: osa-db
+spec:
+  selector:
+    matchLabels:
+      app: osa-db
+  template:
+    metadata:
+      labels:
+        app: osa-db
+    spec:
+      containers:
+      - name: osa-db
+        image: mysql:latest
+        ports:
+        - containerPort: 3306
+        envFrom:
+        - configMapRef:
+            name: osa-db-env-file
+        - secretRef:
+            name: osa-db-secret-file
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: ds-mysql-volume
+      restartPolicy: Always
+      volumes:
+      - name: ds-mysql-volume
+        persistentVolumeClaim:
+          claimName: ds-mysql-volume

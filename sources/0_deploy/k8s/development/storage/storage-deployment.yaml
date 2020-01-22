@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: osa-storage
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: osa-storage
+  serviceName: "osa-storage"
+  podManagementPolicy: OrderedReady
+  template:
+    metadata:
+      labels:
+        app: osa-storage
+    spec:
+      containers:
+      - name: osa-storage
+        image: minio/minio
+        ports:
+        - containerPort: 9000
+        envFrom:
+        - configMapRef:
+            name: osa-storage-env-file
+        - secretRef:
+            name: osa-storage-secret-file
+        args: ["server", "/data"]
+        volumeMounts:
+        - mountPath: /data
+          name: ds-minio-volume
+          
+#      - name: osa-storage-client-default-bucket
+#        image: minio/mc
+#        args: # @findme i comandi sotto dovrebbero acquisire i valori dall'env; con lo sleep a riga 37 ho raggiunto livelli epici di ignoranza, lo so, ma è temporaneo!
+#        - >
+#          /bin/sh -c "
+#          /bin/sleep 60
+#          /usr/bin/mc config host add myminio http://osa-storage:9000 fms example1;
+#          /usr/bin/mc mb myminio/fms-default;
+#          exit 0;
+#          "
+      
+      restartPolicy: Always
+      volumes:
+      - name: ds-minio-volume
+        persistentVolumeClaim:
+          claimName: ds-minio-volume
