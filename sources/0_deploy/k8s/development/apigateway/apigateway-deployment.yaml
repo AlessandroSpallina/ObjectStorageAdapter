@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: osa-apigw
-        image: apigw-prod:v0
+        image: apigw:v0
         ports:
         - containerPort: 9090
       restartPolicy: Always
