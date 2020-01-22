@@ -28,20 +28,16 @@ spec:
         volumeMounts:
         - mountPath: /data
           name: ds-minio-volume
-          
-#      - name: osa-storage-client-default-bucket
-#        image: minio/mc
-#        args: # @findme i comandi sotto dovrebbero acquisire i valori dall'env; con lo sleep a riga 37 ho raggiunto livelli epici di ignoranza, lo so, ma è temporaneo!
-#        - >
-#          /bin/sh -c "
-#          /bin/sleep 60
-#          /usr/bin/mc config host add myminio http://osa-storage:9000 fms example1;
-#          /usr/bin/mc mb myminio/fms-default;
-#          exit 0;
-#          "
-      
       restartPolicy: Always
-      volumes:
-      - name: ds-minio-volume
-        persistentVolumeClaim:
-          claimName: ds-minio-volume
+#      volumes:
+#      - name: ds-minio-volume
+#        persistentVolumeClaim:
+#          claimName: ds-minio-volume
+  volumeClaimTemplates:
+  - metadata:
+      name: ds-minio-volume
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 60Gi
