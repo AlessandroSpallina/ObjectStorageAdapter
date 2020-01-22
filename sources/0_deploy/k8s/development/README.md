@@ -20,7 +20,7 @@ Run on Minikube.
     cd ../../
     sh build-dev.sh
 
-    kubectl apply -f ./persistentvolumes
+    kubectl apply -f ./persistentvolumes/ds-mysql-volume-persistentvolumeclaim.yaml
 
     kubectl apply -f ./db
     kubectl apply -f ./storage
@@ -40,7 +40,7 @@ Run on Minikube.
     cd ../../
     sh build-dev.sh
 
-    kubectl apply -f ./persistentvolumes
+    kubectl apply -f ./persistentvolumes/ds-mysql-volume-persistentvolumeclaim.yaml
 
     kubectl apply -f ./db
     kubectl apply -f ./storage
