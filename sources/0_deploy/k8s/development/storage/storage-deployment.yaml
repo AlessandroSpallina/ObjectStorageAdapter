@@ -28,9 +28,16 @@ spec:
         volumeMounts:
         - mountPath: /data
           name: ds-minio-volume
-
       restartPolicy: Always
-      volumes:
-      - name: ds-minio-volume
-        persistentVolumeClaim:
-          claimName: ds-minio-volume
+#      volumes:
+#      - name: ds-minio-volume
+#        persistentVolumeClaim:
+#          claimName: ds-minio-volume
+  volumeClaimTemplates:
+  - metadata:
+      name: ds-minio-volume
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 60Gi
