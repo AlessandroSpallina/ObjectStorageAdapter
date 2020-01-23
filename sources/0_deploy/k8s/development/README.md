@@ -70,6 +70,6 @@ echo "$(minikube ip) osa.localhost" | sudo tee -a /etc/hosts
   curl --user user@a.a:user --location --request POST 'http://osa.localhost/fms/2' --form 'file=@./README.md'
 
   # Get uploaded file url (be careful, it's a GET/{previously-returned-id}
-
+  curl --user user@a.a:user --location --request GET 'http://osa.localhost/fms/2' --header 'Content-Type: application/json'
 
 ```

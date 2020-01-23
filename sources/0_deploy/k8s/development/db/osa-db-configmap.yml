@@ -5,10 +5,10 @@ kind: ConfigMap
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","data":{"MYSQL_DATABASE":"fms"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":"2020-01-23T11:19:28Z","name":"osa-db-env-file","namespace":"default","resourceVersion":"3926","selfLink":"/api/v1/namespaces/default/configmaps/osa-db-env-file","uid":"5eaff8b5-e971-4b81-81e8-1547d9221cda"}}
-  creationTimestamp: "2020-01-23T11:19:28Z"
+      {"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"osa-db-env-file","creationTimestamp":null},"data":{"MYSQL_DATABASE":"fms"}}
+  creationTimestamp: "2020-01-23T20:02:53Z"
   name: osa-db-env-file
   namespace: default
-  resourceVersion: "4124"
+  resourceVersion: "1367"
   selfLink: /api/v1/namespaces/default/configmaps/osa-db-env-file
-  uid: 5eaff8b5-e971-4b81-81e8-1547d9221cda
+  uid: 8bfcd899-8a61-441c-b393-7f7db9d89add
