@@ -5,6 +5,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 public class Miscellaneous {
 
@@ -17,4 +19,5 @@ public class Miscellaneous {
         fos.close();
         return convFile;
     }
+
 }

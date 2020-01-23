@@ -12,6 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Optional;
@@ -46,17 +48,49 @@ public class FileService {
         fileRepository.save(f);
     }
 
-    private void uploades_s1(File f) {
-        f.setState(FileState.UPLOADES);
-    }
-
     private void uploadesRollback_s1r(File f){
         f.setState(FileState.UPLOAD_FAILED);
+        fileRepository.save(f);
 
         // eliminare le copie del file da tutti i minio
-
-
     }
+
+    private void uploades_s1(File f, MultipartFile multipart) {
+        f.setState(FileState.UPLOADES);
+        fileRepository.save(f);
+
+        try {
+            InetAddress nodes[] = InetAddress.getAllByName(minio_host);
+
+            // viene calcolato un hash univoco da salvare in objectname per evitare collisioni sul bucket
+            int objname = (f.getId().toString() + multipart.getOriginalFilename()).hashCode();
+
+            for (InetAddress node : nodes) {
+                // carica file su tutte le istanze nodo[i]
+                MinioClient mc = new MinioClient("http://" + node.getHostAddress() + ":" + minio_port, minio_id, minio_pass);
+
+                if (!mc.bucketExists(minio_default_bucket)) {
+                    mc.makeBucket(minio_default_bucket);
+                }
+
+                mc.putObject(minio_default_bucket, objname + "_" + multipart.getOriginalFilename(), Miscellaneous.MultipartToJavaFile(multipart).toString());
+
+            }
+
+            f.setObjectname(Integer.toString(objname) + "_" + multipart.getOriginalFilename());
+            f.setBucket(minio_default_bucket);
+            fileRepository.save(f);
+
+            available_s2(f);
+
+        } catch (UnknownHostException e) { // questa è eccezione del dns, non c'è rollback qui xk non è nemmeno iniziato
+            e.printStackTrace();
+        } catch (InvalidPortException | InvalidEndpointException | InvalidKeyException | NoSuchAlgorithmException | NoResponseException | InvalidResponseException | XmlPullParserException | InvalidBucketNameException | InvalidArgumentException | RegionConflictException | InsufficientDataException | ErrorResponseException | InternalException | IOException e) { // questa è eccezione di minio, qui rollback!!
+            uploadesRollback_s1r(f);
+            e.printStackTrace();
+        }
+    }
+
 
     private void available_s2(File f){
         f.setState(FileState.AVAILABLE);
@@ -78,7 +112,6 @@ public class FileService {
         if(fileRepository.findById(id).get().getState() == FileState.WAITING_UPLOAD){
             return true;
         }
-
         return false;
     }
 
@@ -96,43 +129,15 @@ public class FileService {
 
         File toSave = temp_file.get();
 
-        uploades_s1(toSave);
+        uploades_s1(toSave, f);
 
-        try {
-            MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
-
-            if(!mc.bucketExists(minio_default_bucket)) {
-                mc.makeBucket(minio_default_bucket);
-            }
-
-            // viene calcolato un hash univoco da salvare in objectname per evitare collisioni sul bucket
-            Integer objname = (id.toString() + f.getOriginalFilename()).hashCode();
-            mc.putObject(minio_default_bucket, objname.toString() + "_" + f.getOriginalFilename(), Miscellaneous.MultipartToJavaFile(f).toString());
-
-
-            toSave.setObjectname(objname.toString() + "_" + f.getOriginalFilename());
-            toSave.setBucket(minio_default_bucket);
-
-            available_s2(toSave);
-
-        } catch (Exception e) {
-
-            uploadesRollback_s1r(toSave);
-
-            e.printStackTrace();
-        } finally {
-
-            return fileRepository.save(toSave);
-        }
+        return fileRepository.save(toSave);
     }
 
 
     public boolean fileExists (Integer id) {
         Optional<File> file = fileRepository.findById(id);
-        if(file.isPresent())
-            return true;
-        else
-            return false;
+        return file.isPresent();
     }
 
     public boolean isFileOwned (Integer id, String email) {
