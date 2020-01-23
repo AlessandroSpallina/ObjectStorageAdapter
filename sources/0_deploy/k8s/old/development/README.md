@@ -10,7 +10,7 @@ sh create-config-maps.sh
 The Maven pom file is configured in order to provide two profiles per each project: development and production. In the development one the exludeDevTools property is set to false so that you can trigger from IntelliJ or any IDE the live reload server to restart the application whenever the code changes.
 This capability has to be disabled in production environemnt for security purposes.
 
-## Development environment (using vanilla ingress + apigw)
+## Development environment (using vanilla ingress + apigw) -- rotto forse
 
 Run on Minikube.
 
@@ -48,6 +48,31 @@ Run on Minikube.
 
     kubectl apply -f ./customingress
 ```
+
+## Development environment (using ingress with nginx)
+
+Run on Minikube.
+
+```sh
+    eval $(minikube docker-env)
+
+    cd ../../
+    sh build-dev.sh
+
+    kubectl apply -f ./persistentvolumes/ds-mysql-volume-persistentvolumeclaim.yaml
+
+    kubectl apply -f ./db
+    kubectl apply -f ./storage
+    kubectl apply -f ./filemanagementservice
+    
+    kubectl apply -f ./ingress
+```
+
+
+
+
+
+
 
 ## /etc/hosts
 
