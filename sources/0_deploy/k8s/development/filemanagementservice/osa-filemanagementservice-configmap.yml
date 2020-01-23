@@ -12,10 +12,10 @@ kind: ConfigMap
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"osa-filemanagementservice-env-file","creationTimestamp":null},"data":{"MINIO_ACCESS_KEY":"fms","MINIO_DEFAULT_BUCKET":"fms-default","MINIO_HOST":"osa-storage","MINIO_PORT":"9000","MYSQL_DBNAME":"fms","MYSQL_HOST":"osa-db","MYSQL_PORT":"3306","MYSQL_ROOT_USERNAME":"root"}}
-  creationTimestamp: "2020-01-21T14:07:37Z"
+      {"apiVersion":"v1","data":{"MINIO_ACCESS_KEY":"fms","MINIO_DEFAULT_BUCKET":"fms-default","MINIO_HOST":"osa-storage","MINIO_PORT":"9000","MYSQL_DBNAME":"fms","MYSQL_HOST":"osa-db","MYSQL_PORT":"3306","MYSQL_ROOT_USERNAME":"root"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":"2020-01-23T11:19:29Z","name":"osa-filemanagementservice-env-file","namespace":"default","resourceVersion":"3930","selfLink":"/api/v1/namespaces/default/configmaps/osa-filemanagementservice-env-file","uid":"1c701f48-200f-4895-9358-6010790bad5c"}}
+  creationTimestamp: "2020-01-23T11:19:29Z"
   name: osa-filemanagementservice-env-file
   namespace: default
-  resourceVersion: "1069"
+  resourceVersion: "4421"
   selfLink: /api/v1/namespaces/default/configmaps/osa-filemanagementservice-env-file
-  uid: 2578deb9-226e-4a42-9224-686532c498d7
+  uid: 1c701f48-200f-4895-9358-6010790bad5c

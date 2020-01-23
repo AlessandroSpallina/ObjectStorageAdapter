@@ -161,7 +161,10 @@ public class FileService {
         try {
             MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
             Optional<File> toFind = fileRepository.findById(id);
+
             return mc.presignedGetObject(toFind.get().getBucket(), toFind.get().getObjectname());
+            //mc.presignedGetObject(toFind.get().getBucket(), toFind.get().getObjectname());
+            //return "http://ciadiocaneo.oit";
         } catch (InvalidEndpointException | InvalidPortException | InvalidKeyException | NoSuchAlgorithmException | NoResponseException | InvalidResponseException | XmlPullParserException | InvalidBucketNameException | InvalidExpiresRangeException | InsufficientDataException | ErrorResponseException | InternalException | IOException e) {
             e.printStackTrace();
         }

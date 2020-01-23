@@ -3,7 +3,8 @@ kind: StatefulSet
 metadata:
   name: osa-storage
 spec:
-  replicas: 3
+#  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: osa-storage
