@@ -1,5 +1,5 @@
 cd ../filemanagementservice
-docker build -t fms:v0 . -f Dockerfile-dev
+docker build -t fms-prod:v0 . -f Dockerfile-prod
 
 cd ../nginx
 docker build -t apigw-nginx:v0 . -f Dockerfile
