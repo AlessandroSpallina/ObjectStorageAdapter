@@ -1,0 +1,55 @@
+version: '3'
+services:
+        osa-filemanagementservice:
+                image: fms:v0
+                depends_on:
+                        - osa-db
+                        - osa-storage
+                restart: always
+                ports:
+                        - "8080:8080"
+                environment:
+                        MYSQL_ROOT_USERNAME: root
+                        MYSQL_ROOT_PASSWORD: example
+                        MYSQL_HOST: osa-db
+                        MYSQL_PORT: 3306
+                        MYSQL_DBNAME: fms
+                        MINIO_ACCESS_KEY: fms
+                        MINIO_SECRET_KEY: example1    
+                        MINIO_HOST: osa-storage
+                        MINIO_PORT: 9000
+                        MINIO_DEFAULT_BUCKET: fms-default
+
+        osa-db:
+                image: mysql
+                restart: always
+                environment:
+                        MYSQL_ROOT_PASSWORD: example
+                        MYSQL_DATABASE: fms
+        
+        osa-nginx:
+              image: apigw-nginx:v0
+              restart: always
+              depends_on:
+                    - osa-storage
+                    - osa-filemanagementservice
+              ports:
+                    - "9090:80"
+#              environment:
+#                      MINIO_HOST: osa-storage
+#                      MINIO_PORT: 9090
+
+                
+        
+        
+        osa-storage:
+                image: minio/minio
+                restart: always
+                ports:
+                        - "9000:9000"
+                command: server /data
+                environment:
+                        MINIO_ACCESS_KEY: fms
+                        MINIO_SECRET_KEY: example1
+
+

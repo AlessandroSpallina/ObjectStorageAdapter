@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-@Component
+//@Component
 public class ZuulPostFilter extends ZuulFilter {
     @Override
     public String filterType() {

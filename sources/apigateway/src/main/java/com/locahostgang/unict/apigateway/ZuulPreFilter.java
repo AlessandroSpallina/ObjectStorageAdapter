@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
-@Component
+//@Component
 public class ZuulPreFilter extends ZuulFilter {
     @Override
     public String filterType() {
