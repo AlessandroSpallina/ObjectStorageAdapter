@@ -41,6 +41,9 @@ public class FileService {
     @Value("${fms.minio_default_bucket}")
     private String minio_default_bucket;
 
+    @Value("${fms.external_url}")
+    private String external_url;
+
 
     // ========= StateMachine Saga ===========
     private void waitingUpload_s0(File f) {
@@ -159,7 +162,9 @@ public class FileService {
 
     public String getFileLink (Integer id) {
         try {
-            MinioClient mc = new MinioClient(minio_host, Integer.parseInt(minio_port), minio_id, minio_pass, "us-east-1", false);
+            MinioClient mc = new MinioClient("http://" + external_url, minio_id, minio_pass);
+            //MinioClient mc = new MinioClient(minio_host, Integer.parseInt(minio_port), minio_id, minio_pass, "us-east-1", false);
+
             //MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
             Optional<File> toFind = fileRepository.findById(id);
 

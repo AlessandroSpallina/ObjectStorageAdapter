@@ -17,8 +17,9 @@ services:
                         MINIO_ACCESS_KEY: fms
                         MINIO_SECRET_KEY: example1    
                         MINIO_HOST: osa-storage
-                        MINIO_PORT: 9000
+                        MINIO_PORT: 80
                         MINIO_DEFAULT_BUCKET: fms-default
+                        EXTERNAL_URL: osa.localhost
 
         osa-db:
                 image: mysql
@@ -34,7 +35,7 @@ services:
                     - osa-storage
                     - osa-filemanagementservice
               ports:
-                    - "9090:80"
+                    - "80:80"
 #              environment:
 #                      MINIO_HOST: osa-storage
 #                      MINIO_PORT: 9090
@@ -43,8 +44,8 @@ services:
                 image: minio/minio
                 restart: always
                 ports:
-                        - "9000:9000"
-                command: server /data
+                        - "9000:80"
+                command: server --address :80 /data
                 environment:
                         MINIO_ACCESS_KEY: fms
                         MINIO_SECRET_KEY: example1
