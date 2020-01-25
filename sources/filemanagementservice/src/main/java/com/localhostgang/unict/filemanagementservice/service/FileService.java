@@ -167,9 +167,6 @@ public class FileService {
         try {
             MinioClient mc = new MinioClient("http://" + external_url, minio_id, minio_pass);
 
-            //MinioClient mc = new MinioClient(minio_host, Integer.parseInt(minio_port), minio_id, minio_pass, "us-east-1", false);
-
-            //MinioClient mc = new MinioClient("http://" + minio_host + ":" + minio_port, minio_id, minio_pass);
             Optional<File> toFind = fileRepository.findById(id);
 
             return mc.presignedGetObject(toFind.get().getBucket(), toFind.get().getObjectname());
