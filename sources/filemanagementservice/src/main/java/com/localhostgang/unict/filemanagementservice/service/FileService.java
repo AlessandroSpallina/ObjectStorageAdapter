@@ -76,7 +76,10 @@ public class FileService {
                     mc.makeBucket(minio_default_bucket);
                 }
 
-                mc.putObject(minio_default_bucket, objname + "_" + multipart.getOriginalFilename(), Miscellaneous.MultipartToJavaFile(multipart).toString());
+
+                java.io.File tmp = Miscellaneous.multipartToJavaFileOnFS(multipart);
+                mc.putObject(minio_default_bucket, objname + "_" + multipart.getOriginalFilename(), tmp.toString());
+                tmp.delete();
 
             }
 
