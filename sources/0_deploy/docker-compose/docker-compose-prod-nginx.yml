@@ -43,10 +43,11 @@ services:
         osa-storage:
                 image: minio/minio
                 restart: always
-                command: server /data
+                command: server --address :80 /data
                 environment:
                         MINIO_ACCESS_KEY: fms
                         MINIO_SECRET_KEY: example1
+                        MINIO_DOMAIN: osa.localhost
                 volumes:
                         - "ds-minio-volume:/data"
 

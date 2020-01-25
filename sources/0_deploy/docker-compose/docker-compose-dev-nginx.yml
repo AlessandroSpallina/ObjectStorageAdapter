@@ -49,5 +49,6 @@ services:
                 environment:
                         MINIO_ACCESS_KEY: fms
                         MINIO_SECRET_KEY: example1
+                        MINIO_DOMAIN: osa.localhost
 
 
