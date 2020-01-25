@@ -18,21 +18,17 @@ spec:
       - name: osa-storage
         image: minio/minio
         ports:
-        - containerPort: 9000
+        - containerPort: 80
         envFrom:
         - configMapRef:
             name: osa-storage-env-file
         - secretRef:
             name: osa-storage-secret-file
-        args: ["server", "/data"]
+        args: ["server", "--address", ":80","/data"]
         volumeMounts:
         - mountPath: /data
           name: ds-minio-volume
       restartPolicy: Always
-#      volumes:
-#      - name: ds-minio-volume
-#        persistentVolumeClaim:
-#          claimName: ds-minio-volume
   volumeClaimTemplates:
   - metadata:
       name: ds-minio-volume
