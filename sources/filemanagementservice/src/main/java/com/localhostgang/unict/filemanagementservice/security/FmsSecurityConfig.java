@@ -30,6 +30,7 @@ public class FmsSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/.~~spring-boot!~/restart").permitAll()
+                .antMatchers("/.~~spring-boot!~").permitAll()
                 .antMatchers("/ping").permitAll()
                 .anyRequest().authenticated()
                 .and()

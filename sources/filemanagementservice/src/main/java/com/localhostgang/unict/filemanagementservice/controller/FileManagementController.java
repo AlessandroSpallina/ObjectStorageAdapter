@@ -20,13 +20,8 @@ public class FileManagementController {
 
     @GetMapping("/ping")
     public String ping() {
-        return "ponge";
+        return "pong";
     }
-
-    /*@GetMapping("/test")
-    public String test() {
-
-    }*/
 
     // get #1
     @GetMapping(path = "/{id}") // l'id della prima get è quello dei files che sono stati inseriti da un utente
