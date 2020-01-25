@@ -20,7 +20,7 @@ public class FileManagementController {
 
     @GetMapping("/ping")
     public String ping() {
-        return "pong";
+        return "pongg";
     }
 
     // get #1
@@ -31,10 +31,12 @@ public class FileManagementController {
             return ResponseEntity.status(404).build();
 
         if(auth.getAuthorities().contains("ADMIN")) {
-            return ResponseEntity.status(301).body(fileService.getFileLink(id));
+            return ResponseEntity.status(301).header("Location", fileService.getFileLink(id)).build();
+            //return ResponseEntity.status(301).body(fileService.getFileLink(id));
         } else {
             if(fileService.isFileOwned(id, auth.getName())) {
-                return ResponseEntity.status(301).body(fileService.getFileLink(id));
+                return ResponseEntity.status(301).header("Location", fileService.getFileLink(id)).build();
+                //return ResponseEntity.status(301).body(fileService.getFileLink(id));
             } else {
                 return ResponseEntity.status(404).build();
             }
