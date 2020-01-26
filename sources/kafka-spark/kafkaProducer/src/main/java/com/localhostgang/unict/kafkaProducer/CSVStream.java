@@ -17,17 +17,23 @@ public class CSVStream {
 
     public CSVStream() throws FileNotFoundException, IOException {
         try{
+            // la variabile iteration = 0 serve all'interno del while per evitare di
+            // inviare gli header del csv file al broker
+            int iteration = 0;
             while((line = br.readLine()) != null) {
-
+                if(iteration == 0) {
+                    iteration++;
+                    continue; // il continue ci farà tornare ad inizio while
+                }
                 String[] metric = line.split(csvSplitBy);
 
-                kafkaProducer.runProducer(metric);
-
+                String metrictopush = metric[0]+" "+metric[1]+" "+metric[2]+" "+metric[3];
                 // System.out.println("info:"+metric[0]+" "+metric[1]+" "+metric[2]+" "+metric[3]+" ");
-
+                // System.out.println(metrictopush);
+                kafkaProducer.runProducer(metrictopush);
             }
 
-        }catch(IOException e) {
+        } catch(IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();

@@ -30,7 +30,7 @@ public class KProducer {
 
 
     // suggerimento: cambia da "public" a "static"
-    public void runProducer(String[] metric) throws Exception {
+    public void runProducer(String metric) throws Exception {
         try {
             // metodo che richiamo in CSVUtils
             producer.send(new ProducerRecord("metric", metric.toString()));
