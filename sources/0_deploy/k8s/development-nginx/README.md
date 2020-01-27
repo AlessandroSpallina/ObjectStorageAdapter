@@ -18,7 +18,7 @@ Run on Minikube.
     eval $(minikube docker-env)
 
     cd ../../
-    sh build-dev.sh
+    sh build-dev-nginx.sh
     cd ./k8s/development-nginx
 
     kubectl apply -f ./db
