@@ -6,9 +6,9 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"osa-db-env-file","creationTimestamp":null},"data":{"MYSQL_DATABASE":"fms"}}
-  creationTimestamp: "2020-01-27T11:21:40Z"
+  creationTimestamp: "2020-01-27T17:41:51Z"
   name: osa-db-env-file
   namespace: default
-  resourceVersion: "654"
+  resourceVersion: "967"
   selfLink: /api/v1/namespaces/default/configmaps/osa-db-env-file
-  uid: db5a126f-3042-44d1-b822-e63d40fae660
+  uid: 939b97e0-7655-4bb3-a19a-7546409aa202
