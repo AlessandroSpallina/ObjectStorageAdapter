@@ -83,6 +83,11 @@ public class FileService {
             int objname = (f.getId().toString() + multipart.getOriginalFilename()).hashCode();
 
             for (InetAddress node : nodes) {
+
+                // istanzia N thread che fanno la routine di upload @findme
+
+
+                // ---------------- routine di upload ----------------
                 // carica file su tutte le istanze nodo[i]
                 MinioClient mc = new MinioClient("http://" + node.getHostAddress() + ":" + minio_port, minio_id, minio_pass);
                 //System.out.println(node.getHostAddress() + ":address - host :" + node.getHostName());
@@ -94,10 +99,11 @@ public class FileService {
                 java.io.File tmp = Miscellaneous.multipartToJavaFileOnFS(multipart);
                 mc.putObject(minio_default_bucket, objname + "_" + multipart.getOriginalFilename(), tmp.toString());
                 tmp.delete();
+                // --------------------------------------------------
 
             }
 
-            f.setObjectname(Integer.toString(objname) + "_" + multipart.getOriginalFilename());
+            f.setObjectname(objname + "_" + multipart.getOriginalFilename());
             f.setBucket(minio_default_bucket);
             fileRepository.save(f);
 
