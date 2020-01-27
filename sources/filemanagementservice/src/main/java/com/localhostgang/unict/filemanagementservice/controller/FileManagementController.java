@@ -20,7 +20,7 @@ public class FileManagementController {
 
     @GetMapping("/ping")
     public String ping() {
-        return "pongg";
+        return "pong";
     }
 
     // get #1

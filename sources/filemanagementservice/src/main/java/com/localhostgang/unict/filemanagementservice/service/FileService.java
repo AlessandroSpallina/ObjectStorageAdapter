@@ -55,7 +55,21 @@ public class FileService {
         f.setState(FileState.UPLOAD_FAILED);
         fileRepository.save(f);
 
-        // eliminare le copie del file da tutti i minio
+        // elimina le copie del file da tutti i minio
+        try {
+            InetAddress nodes[] = InetAddress.getAllByName(minio_host);
+
+            for (InetAddress node : nodes) {
+
+                MinioClient mc = new MinioClient("http://" + node.getHostAddress() + ":" + minio_port, minio_id, minio_pass);
+
+                mc.removeObject(f.getBucket(), f.getObjectname());
+            }
+
+        } catch (InvalidPortException | InvalidEndpointException | InvalidKeyException | NoSuchAlgorithmException | NoResponseException | InvalidResponseException | XmlPullParserException | InvalidBucketNameException | InvalidArgumentException | InsufficientDataException | ErrorResponseException | InternalException | IOException e) {
+            e.printStackTrace();
+        }
+        // --------------------------------------------
     }
 
     private void uploades_s1(File f, MultipartFile multipart) {
@@ -71,11 +85,11 @@ public class FileService {
             for (InetAddress node : nodes) {
                 // carica file su tutte le istanze nodo[i]
                 MinioClient mc = new MinioClient("http://" + node.getHostAddress() + ":" + minio_port, minio_id, minio_pass);
+                //System.out.println(node.getHostAddress() + ":address - host :" + node.getHostName());
 
                 if (!mc.bucketExists(minio_default_bucket)) {
                     mc.makeBucket(minio_default_bucket);
                 }
-
 
                 java.io.File tmp = Miscellaneous.multipartToJavaFileOnFS(multipart);
                 mc.putObject(minio_default_bucket, objname + "_" + multipart.getOriginalFilename(), tmp.toString());
