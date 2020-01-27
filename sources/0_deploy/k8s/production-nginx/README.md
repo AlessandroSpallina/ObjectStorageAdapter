@@ -18,7 +18,7 @@ Run on Minikube.
     eval $(minikube docker-env)
 
     cd ../../
-    sh build-prod.sh
+    sh build-prod-nginx.sh
     cd ./k8s/production-nginx
 
     kubectl apply -f ./persistentvolumes/
