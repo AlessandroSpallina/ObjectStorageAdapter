@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: osa-filemanagementservice
+spec:
+  selector:
+    matchLabels:
+      app: osa-filemanagementservice
+  template:
+    metadata:
+      labels:
+        app: osa-filemanagementservice
+    spec:
+      containers:
+      - name: osa-filemanagementservice
+        image: fms:v0
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: osa-filemanagementservice-env-file
+        - secretRef:
+            name: osa-filemanagementservice-secret-file
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
+    #  initContainers:
+    #  - name: waitdb
+    #    image: imega/mysql-client
+    #    command: ["sh", "-c", "until mysqladmin -u$(MYSQL_ROOT_USERNAME) -p$(MYSQL_ROOT_PASSWORD) -h$(MYSQL_HOST) status >/dev/null 2>&1 </dev/null; echo \"I'm waiting for db\"; sleep 2; echo \"DONE\""]
+    #    envFrom:
+    #    - configMapRef:
+    #        name: osa-filemanagementservice-env-file
+    #    - secretRef:
+    #        name: osa-filemanagementservice-secret-file
+      restartPolicy: Always

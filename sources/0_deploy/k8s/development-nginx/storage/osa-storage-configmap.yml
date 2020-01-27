@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  MINIO_ACCESS_KEY: fms
+  MINIO_DOMAIN: osa.localhost
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"osa-storage-env-file","creationTimestamp":null},"data":{"MINIO_ACCESS_KEY":"fms","MINIO_DOMAIN":"osa.localhost"}}
+  creationTimestamp: "2020-01-26T23:24:05Z"
+  name: osa-storage-env-file
+  namespace: default
+  resourceVersion: "3837"
+  selfLink: /api/v1/namespaces/default/configmaps/osa-storage-env-file
+  uid: 4d4d3dc0-ffd6-49d6-806b-176c60fd85ce
