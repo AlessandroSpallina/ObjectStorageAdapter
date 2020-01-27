@@ -12,5 +12,8 @@ Start Kafka Producer (from IDE), that's the Spout
 
 Step3:
 ```
-./spark-submit --master local --class com.dslab.App /home/manlio/Scrivania/spark-kafka-consumer-PROVA/target/spark-streaming-twitter_hashtag-1.0-SNAPSHOT-jar-with-dependencies.jar
+ spark-submit \
+--master local \
+--class org.example.App \
+/home/manlio/Scrivania/'progetto sistemi distribuiti'/ObjectStorageAdapter/sources/kafka-spark/sparkConsumer/target/provaScala-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
