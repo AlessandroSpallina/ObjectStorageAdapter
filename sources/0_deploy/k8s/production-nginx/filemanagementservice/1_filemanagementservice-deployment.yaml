@@ -21,8 +21,16 @@ spec:
             name: osa-filemanagementservice-env-file
         - secretRef:
             name: osa-filemanagementservice-secret-file
-#				livenessProbe:
-#          httpGet:
-#            path: /ping
-#            port: 8080				  
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
       restartPolicy: Always
