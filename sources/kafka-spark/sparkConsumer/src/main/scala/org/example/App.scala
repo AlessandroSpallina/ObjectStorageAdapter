@@ -32,10 +32,18 @@ object App {
       Subscribe[String, String](topic, kafkaParams)
     )
 
+
     val lines = stream.map(_.value)
-    val countGET = lines.flatMap(line => line.split(" ")).filter(word => word.contains("get")).map(word => (word, 1))
-    val reduced = countGET.reduceByKey(_ + _)
-    reduced.saveAsTextFiles("provasalvataggio") //dopo hdfs:// ci va il nome completo dell'host name dov'è il master
+    // val countGET = lines.flatMap(line => line.split(" ")).filter(word => word.contains("GET")).map(word => (word, 1))
+    // val reduced = countGET.reduceByKey(_ + _)
+    //reduced.saveAsTextFiles("provasalvataggio/prova")
+    //lines.saveAsTextFiles("provasalvataggio/prova")
+
+    stream.saveAsTextFiles("provasalvataggio/prova")
+
+    // Sta println l'ho provata per vedere se printa su schermo le lines che tecnicamente si pulla dal broker
+    println("#################   "+lines+"   #################")
+    // spoiler: non lo fa.
 
     ssc.start()
     ssc.awaitTermination()
