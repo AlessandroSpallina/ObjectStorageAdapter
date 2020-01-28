@@ -2,298 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a77bf00e-a7fb-43ed-b06f-b239f07554ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/TimestampCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/.attach_pid20758" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/.attach_pid31797" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/CSVStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/CSVStream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/KProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/KProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/KafkaProducerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/KafkaProducerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/CSVStream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/KProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/KafkaProducerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/resources/kafka.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/test/java/com/localhostgang/unict/kafkaProducer/KafkaProducerApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983018000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983018000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983018000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983018000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983019000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983019000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983019000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983019000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983020000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983020000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983020000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983020000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983021000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983021000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983021000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983021000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983022000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983022000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983022000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983022000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983023000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983023000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983023000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983023000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983024000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983024000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983024000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983024000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983025000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983025000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983025000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983025000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983026000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983026000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983026000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983026000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983027000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983027000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983027000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983027000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983028000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983028000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983028000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983028000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983029000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983029000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983029000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983029000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983030000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983030000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983030000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983030000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983031000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983031000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983031000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983031000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983032000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983032000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983032000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983032000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983033000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983033000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983033000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983033000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983034000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983034000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983034000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983034000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983035000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983035000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983035000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983035000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983036000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983036000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983036000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983036000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983037000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983037000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983037000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983037000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983038000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983038000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983038000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983038000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983039000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983039000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983039000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983039000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983040000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983040000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983040000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983040000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983041000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983041000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983041000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983041000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983042000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983042000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983042000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983042000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983043000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983043000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983043000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983043000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983044000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983044000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983044000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983044000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983045000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983045000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983045000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983045000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983046000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983046000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983046000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983046000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983047000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983047000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983047000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983047000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983048000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983048000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983048000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983048000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983049000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983049000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983049000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983049000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983050000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983050000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983050000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983050000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983051000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983051000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983051000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983051000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983052000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983052000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983052000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983052000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983053000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983053000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983053000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983053000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983054000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983054000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983054000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983054000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983055000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983055000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983055000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983055000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983056000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983056000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983056000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983056000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983057000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983057000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983057000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983057000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983058000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983058000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983058000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983058000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983059000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983059000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983059000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983059000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983060000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983060000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983060000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983060000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983061000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983061000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983061000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983061000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983062000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983062000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983062000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983062000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983063000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983063000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983063000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983063000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983064000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983064000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983064000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983064000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983065000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983065000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983065000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983065000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983066000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983066000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983066000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983066000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983067000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983067000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983067000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983067000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983068000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983068000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983068000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983068000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983069000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983069000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983069000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983069000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983070000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983070000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983070000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983070000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983071000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983071000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983071000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983071000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983072000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983072000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983072000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983072000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983073000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983073000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983073000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983073000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983074000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983074000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983074000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983074000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983075000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983075000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983075000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983075000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983076000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983076000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983076000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983076000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983077000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983077000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983077000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983077000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983078000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983078000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983078000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983078000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983079000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983079000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983079000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983079000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983080000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983080000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983080000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983080000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983081000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983081000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983081000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983081000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983082000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983082000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983082000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983082000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983083000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983083000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983083000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983083000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983084000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983084000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983084000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983084000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983085000/._SUCCESS.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983085000/.part-00000.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983085000/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provasalvataggio-1579983085000/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +63,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../producer-pojo" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="SvnConfiguration">
@@ -357,6 +78,7 @@
       <updated>1579960609915</updated>
       <workItem from="1579960613504" duration="10874000" />
       <workItem from="1580123152275" duration="9522000" />
+      <workItem from="1580219291320" duration="2068000" />
     </task>
     <servers />
   </component>
@@ -364,10 +86,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580123654187">
+    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580223657288">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl/0.32.1920.1013@0.32.1920.1013" timestamp="1580123654187" />
+    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl/0.32.1920.1013@0.32.1920.1013" timestamp="1580223657288" />
     <state width="914" height="105" key="GridCell.Tab.0.bottom" timestamp="1580166338966">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
