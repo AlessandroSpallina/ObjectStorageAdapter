@@ -28,17 +28,13 @@ public class KProducer {
         return new KafkaProducer<>(properties);
     }
 
-
-    // suggerimento: cambia da "public" a "static"
+    // metodo che invia un record al broker
     public void runProducer(String metric) throws Exception {
         try {
             // metodo che richiamo in CSVUtils
             producer.send(new ProducerRecord("metric", metric.toString()));
         } catch (Exception e) {
             e.printStackTrace();
-        }/*finally {
-           // producer.flush();
-           // producer.close();
-        } */
+        }
     }
 }
