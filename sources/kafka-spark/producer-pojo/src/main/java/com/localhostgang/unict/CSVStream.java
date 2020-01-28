@@ -30,6 +30,9 @@ public class CSVStream {
                     String[] metrics = line.split(csvSplitBy);
                     line = metrics[0] + " " + metrics[1] + " " + metrics[2] + " " + metrics[3];
                     kp.produceData(line);
+
+                    // aggiunto dopo suggerimento Di Maria
+                    Thread.sleep(3000);
                 }
             } else {
                 Thread.sleep(120000);

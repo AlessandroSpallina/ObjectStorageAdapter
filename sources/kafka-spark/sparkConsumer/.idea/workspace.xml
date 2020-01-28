@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a77bf00e-a7fb-43ed-b06f-b239f07554ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/CSVStream.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/KProducer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/java/com/localhostgang/unict/kafkaProducer/KafkaProducerApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/main/resources/kafka.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kafkaProducer/src/test/java/com/localhostgang/unict/kafkaProducer/KafkaProducerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/CSVStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/CSVStream.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +72,7 @@
       <updated>1579960609915</updated>
       <workItem from="1579960613504" duration="10874000" />
       <workItem from="1580123152275" duration="9522000" />
-      <workItem from="1580219291320" duration="2068000" />
+      <workItem from="1580219291320" duration="5325000" />
     </task>
     <servers />
   </component>
@@ -86,26 +80,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580223657288">
+    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580246541815">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl/0.32.1920.1013@0.32.1920.1013" timestamp="1580223657288" />
-    <state width="914" height="105" key="GridCell.Tab.0.bottom" timestamp="1580166338966">
+    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl/0.32.1920.1013@0.32.1920.1013" timestamp="1580246541815" />
+    <state width="914" height="105" key="GridCell.Tab.0.bottom" timestamp="1580247432669">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="914" height="105" key="GridCell.Tab.0.bottom/0.32.1920.1013@0.32.1920.1013" timestamp="1580166338966" />
-    <state width="914" height="105" key="GridCell.Tab.0.center" timestamp="1580166338964">
+    <state width="914" height="105" key="GridCell.Tab.0.bottom/0.32.1920.1013@0.32.1920.1013" timestamp="1580247432669" />
+    <state width="914" height="105" key="GridCell.Tab.0.center" timestamp="1580247432667">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="914" height="105" key="GridCell.Tab.0.center/0.32.1920.1013@0.32.1920.1013" timestamp="1580166338964" />
-    <state width="914" height="105" key="GridCell.Tab.0.left" timestamp="1580166338963">
+    <state width="914" height="105" key="GridCell.Tab.0.center/0.32.1920.1013@0.32.1920.1013" timestamp="1580247432667" />
+    <state width="914" height="105" key="GridCell.Tab.0.left" timestamp="1580247432666">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="914" height="105" key="GridCell.Tab.0.left/0.32.1920.1013@0.32.1920.1013" timestamp="1580166338963" />
-    <state width="914" height="105" key="GridCell.Tab.0.right" timestamp="1580166338965">
+    <state width="914" height="105" key="GridCell.Tab.0.left/0.32.1920.1013@0.32.1920.1013" timestamp="1580247432666" />
+    <state width="914" height="105" key="GridCell.Tab.0.right" timestamp="1580247432668">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="914" height="105" key="GridCell.Tab.0.right/0.32.1920.1013@0.32.1920.1013" timestamp="1580166338965" />
+    <state width="914" height="105" key="GridCell.Tab.0.right/0.32.1920.1013@0.32.1920.1013" timestamp="1580247432668" />
     <state x="200" y="243" width="1422" height="603" key="new project wizard" timestamp="1580123661999">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>

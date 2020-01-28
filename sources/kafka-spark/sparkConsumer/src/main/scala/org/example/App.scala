@@ -14,7 +14,7 @@ import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
 object App {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("spark-consumer-kafka")
-    val ssc = new StreamingContext(conf, Seconds(1))
+    val ssc = new StreamingContext(conf, Seconds(30))
 
     val kafkaParams = Map[String, Object] (
       "bootstrap.servers" -> "localhost:9092",
@@ -25,7 +25,8 @@ object App {
       "enable.auto.commit" -> (false: java.lang.Boolean)
     )
 
-    val topic = Array("metric")
+    // val topic = Array("metric")
+    val topic = Array("osa-metrics")
     val stream = KafkaUtils.createDirectStream[String, String](
       ssc,
       PreferConsistent,
