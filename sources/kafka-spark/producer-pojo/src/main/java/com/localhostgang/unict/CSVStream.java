@@ -6,12 +6,12 @@ import java.io.*;
 import java.util.Properties;
 
 public class CSVStream {
-    private final Properties prop = Utils.loadProperties("consumer.properties");
+    private final Properties prop = Utils.loadProperties("producer.properties");
 
     private long firstTimestamp = 0;
     private String csvSplitBy = ",";
-    private BufferedReader br = new BufferedReader(new FileReader(prop.getProperty("consumer.filepath")));
-    private File file = new File(prop.getProperty("consumer.filepath"));
+    private BufferedReader br = new BufferedReader(new FileReader(prop.getProperty("producer.filepath")));
+    private File file = new File(prop.getProperty("producer.filepath"));
     private int counter = 0;
     private KProducer kp = new KProducer();
 

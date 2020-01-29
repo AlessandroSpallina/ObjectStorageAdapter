@@ -14,7 +14,10 @@ import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
 object App {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("spark-consumer-kafka")
-    val ssc = new StreamingContext(conf, Seconds(60))
+
+    val utils = Utils.loadProperties("application.properties")
+
+    val ssc = new StreamingContext(conf, Seconds(utils.getProperty("consumer.batchtime").toLong))
 
     val kafkaParams = Map[String, Object] (
       "bootstrap.servers" -> "localhost:9092",
@@ -42,15 +45,29 @@ object App {
 
     val read = lines.filter(line => {
       line.split(" ")(1) == "GET"
-    }).map(w => ("read", w.split(" ")(5).toFloat))
+    }).map(w => {
+      ("read", w.split(" ")(5).toFloat)
+    })
+    val getReadTot = read.toString
+    val params = getReadTot.split(" ")
+    val numero : Long = params(1).toLong
+    val divisore : Long = read.count() : Long
+    val media = numero / divisore
+    val stringaDaSalvare = "average read time: " + media
 
-    val reducedRead = read.reduceByKey(_ + _)
+    /*
+    //val counter = read.count()
+    val readC = lines.filter(line => line.split(" ")(1) == "GET")
+    //val c = readC.count()
+    readC.map(w => ("read", w.split(" ")(5).toFloat))
+        .reduceByKey(_ + _)
+        .map(w => ("read", readC.count()))
 
 
 
     //letture.toString
-    reducedRead.saveAsTextFiles("provasalvataggio/prova")
-
+    readC.saveAsTextFiles("provasalvataggio/prova")
+*/
 
 /*
     val countGET = lines.flatMap(line => line.split(" ")).filter(word => word.contains("GET")).map(word => (word, 1))
