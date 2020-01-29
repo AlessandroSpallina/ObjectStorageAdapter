@@ -35,11 +35,29 @@ object App {
 
 
     val lines = stream.map(_.value)
+    //val letture = lines.flatMap(line => line.split(" ").toList).filter(word => word.contains("GET")).map(lines => lines)
+    /*val letture = lines.flatMap(line =>
+      line.split(" ")
+    )*/
+
+    val read = lines.filter(line => {
+      line.split(" ")(1) == "GET"
+    }).map(w => ("read", w.split(" ")(5).toFloat))
+
+    val reducedRead = read.reduceByKey(_ + _)
+
+
+
+    //letture.toString
+    reducedRead.saveAsTextFiles("provasalvataggio/prova")
+
+
+/*
     val countGET = lines.flatMap(line => line.split(" ")).filter(word => word.contains("GET")).map(word => (word, 1))
     val reducedGET = countGET.reduceByKey(_ + _)
     reducedGET.saveAsTextFiles("provasalvataggio/provaGET")
-
-
+*/
+/*
     val countPOST = lines.flatMap(line => line.split(" ")).filter(word => word.contains("POST")).map(word => (word, 1))
     val reducedPOST = countPOST.reduceByKey(_ + _)
     reducedPOST.saveAsTextFiles("provasalvataggio/provaPOST")
@@ -49,7 +67,7 @@ object App {
     val reducedDELETE = countDELETE.reduceByKey(_ + _)
     reducedDELETE.saveAsTextFiles("provasalvataggio/provaDELETE")
 
-
+*/
     // lines.saveAsTextFiles("provasalvataggio/prova")
 
     // stream.saveAsTextFiles("provasalvataggio/prova")
