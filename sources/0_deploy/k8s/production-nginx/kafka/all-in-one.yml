@@ -95,5 +95,3 @@ spec:
         env:
         - name: ZOO_MY_ID
           value: "1"
-
-

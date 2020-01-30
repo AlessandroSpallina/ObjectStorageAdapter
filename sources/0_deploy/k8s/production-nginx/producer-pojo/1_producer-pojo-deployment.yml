@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-producer-pojo
+spec:
+  selector:
+    matchLabels:
+      app: kafka-producer-pojo
+  template:
+    metadata:
+      labels:
+        app: kafka-producer-pojo
+    spec:
+      containers:
+      - name: kafka-producer-pojo
+        image: kafka-producer-prod:v0
+        envFrom:
+        - configMapRef:
+            name: kafka-producer-pojo-env-file
+      restartPolicy: Always

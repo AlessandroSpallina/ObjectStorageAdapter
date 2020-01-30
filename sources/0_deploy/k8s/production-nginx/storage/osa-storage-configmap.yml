@@ -6,10 +6,10 @@ kind: ConfigMap
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"osa-storage-env-file","creationTimestamp":null},"data":{"MINIO_ACCESS_KEY":"fms","MINIO_DOMAIN":"osa.localhost"}}
-  creationTimestamp: "2020-01-26T22:21:22Z"
+      {"apiVersion":"v1","data":{"MINIO_ACCESS_KEY":"fms","MINIO_DOMAIN":"osa.localhost"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":"2020-01-30T14:52:40Z","name":"osa-storage-env-file","namespace":"default","resourceVersion":"729","selfLink":"/api/v1/namespaces/default/configmaps/osa-storage-env-file","uid":"2a48b7c8-8232-4f5d-bb43-51aa17a93413"}}
+  creationTimestamp: "2020-01-30T14:52:40Z"
   name: osa-storage-env-file
   namespace: default
-  resourceVersion: "5872"
+  resourceVersion: "1601"
   selfLink: /api/v1/namespaces/default/configmaps/osa-storage-env-file
-  uid: f7d2ec61-ec93-4d5b-aad0-da4d8a49cde8
+  uid: 2a48b7c8-8232-4f5d-bb43-51aa17a93413
