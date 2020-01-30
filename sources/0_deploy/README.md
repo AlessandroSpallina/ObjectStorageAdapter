@@ -1,7 +1,7 @@
 Una volta scaricato il progetto, recati nella directory del progetto e apri il terminale.
 
 ```
-cd ObjectStorageAdapter/sources/0_deploy
+cd sources/0_deploy
 ```
 Per buildare le immagini docker in produzione esegui
 ```
@@ -16,7 +16,8 @@ Successivamente, spostati da terminale nella cartella ```docker-compose```
 ```
 cd docker-compose
 ```
-E, a seconda di quale delle due build tu abbia eseguito, esegui rispettivamente
+
+A seconda di quale delle due build tu abbia eseguito, esegui rispettivamente
 ```
 docker-compose -f docker-compose-prod-nginx up
 
