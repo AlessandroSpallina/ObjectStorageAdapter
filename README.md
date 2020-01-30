@@ -26,3 +26,6 @@ Il file .csv viene salvato su file system, anche il nome del file e il path dove
 Istruzioni Docker-compose: [link](https://github.com/PManlio/ObjectStorageAdapter/tree/pt2/sources/0_deploy).
 
 Esempi di richieste sono specificati nel README del link sopracitato.
+
+#### Avviare le metriche
+Istruzioni per il client python: [link](https://github.com/PManlio/ObjectStorageAdapter/tree/pt2/sources/pyclient).
