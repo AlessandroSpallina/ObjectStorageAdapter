@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a77bf00e-a7fb-43ed-b06f-b239f07554ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/CSVStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/CSVStream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/KProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/KProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/common/Utils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/resources/kafka.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/resources/producer.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a77bf00e-a7fb-43ed-b06f-b239f07554ac" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +75,7 @@
       <workItem from="1580292982209" duration="11907000" />
       <workItem from="1580315102547" duration="647000" />
       <workItem from="1580333899810" duration="6003000" />
-      <workItem from="1580378287584" duration="6051000" />
+      <workItem from="1580378287584" duration="6176000" />
     </task>
     <servers />
   </component>
@@ -98,22 +91,22 @@
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
     <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl/0.32.1920.1013@0.32.1920.1013" timestamp="1580334513571" />
-    <state width="1874" height="155" key="GridCell.Tab.0.bottom" timestamp="1580382974433">
+    <state width="1874" height="155" key="GridCell.Tab.0.bottom" timestamp="1580388067529">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="1874" height="155" key="GridCell.Tab.0.bottom/0.32.1920.1013@0.32.1920.1013" timestamp="1580382974433" />
-    <state width="1874" height="155" key="GridCell.Tab.0.center" timestamp="1580382974431">
+    <state width="1874" height="155" key="GridCell.Tab.0.bottom/0.32.1920.1013@0.32.1920.1013" timestamp="1580388067529" />
+    <state width="1874" height="155" key="GridCell.Tab.0.center" timestamp="1580388067528">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="1874" height="155" key="GridCell.Tab.0.center/0.32.1920.1013@0.32.1920.1013" timestamp="1580382974431" />
-    <state width="1874" height="155" key="GridCell.Tab.0.left" timestamp="1580382974429">
+    <state width="1874" height="155" key="GridCell.Tab.0.center/0.32.1920.1013@0.32.1920.1013" timestamp="1580388067528" />
+    <state width="1874" height="155" key="GridCell.Tab.0.left" timestamp="1580388067528">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="1874" height="155" key="GridCell.Tab.0.left/0.32.1920.1013@0.32.1920.1013" timestamp="1580382974429" />
-    <state width="1874" height="155" key="GridCell.Tab.0.right" timestamp="1580382974432">
+    <state width="1874" height="155" key="GridCell.Tab.0.left/0.32.1920.1013@0.32.1920.1013" timestamp="1580388067528" />
+    <state width="1874" height="155" key="GridCell.Tab.0.right" timestamp="1580388067528">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="1874" height="155" key="GridCell.Tab.0.right/0.32.1920.1013@0.32.1920.1013" timestamp="1580382974432" />
+    <state width="1874" height="155" key="GridCell.Tab.0.right/0.32.1920.1013@0.32.1920.1013" timestamp="1580388067528" />
     <state x="305" y="458" width="471" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580338729083">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
