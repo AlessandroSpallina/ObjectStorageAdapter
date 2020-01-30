@@ -23,6 +23,6 @@ I vari valori richiesti dalla consegna (n1, n2, n3, n4, p1, p2) sono specificati
 Il file .csv viene salvato su file system, anche il nome del file e il path dove viene salvato sono parametrizzati.
 
 #### Avviare l'applicazione
-Istruzioni Docker-compose: [link](https://github.com/PManlio/ObjectStorageAdapter/tree/pt2/sources/0_deploy/docker-compose).
+Istruzioni Docker-compose: [link](https://github.com/PManlio/ObjectStorageAdapter/tree/pt2/sources/0_deploy).
 
 Esempi di richieste sono specificati nel README del link sopracitato.
