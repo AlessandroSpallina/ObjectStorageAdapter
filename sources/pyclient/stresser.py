@@ -104,8 +104,6 @@ def _get_existing_files_list(osa):
 def main():
     print("============ STRESSER CLIENT ============")
 
-    osa = ObjectStorageAdapterAPI('user@a.a', 'user', 'http://151.97.159.253:9090/fms')
-
     print("\n-> Reading ENV")
     N1 = int(os.environ.get('N1', 1))
     N2 = int(os.environ.get('N2', 1))
@@ -113,19 +111,28 @@ def main():
     N4 = int(os.environ.get('N4', 1))
     P1 = float(os.environ.get('P1', 1))
     P2 = float(os.environ.get('P2', 1))
+    USERNAME = os.environ.get('USERNAME', 'user@a.a')
+    PASSWORD = os.environ.get('PASSWORD', 'user')
+    ENDPOINT = os.environ.get('ENDPOINT', 'http://osa.localhost/fms')
+    LOAD_SEC = int(os.environ.get('LOAD_SEC', 30))
+    EXISTEND_FILE_ID = int(os.environ.get('EXISTEND_FILE_ID', 30))
+    NON_EXISTEND_FILE_ID = int(os.environ.get('NON_EXISTEND_FILE_ID', 30))
+    OUTPUT_FILE = os.environ.get('OUTPUT_FILE', 'metrics.csv')
     print("* N1: {}\n* N2: {}\n* N3: {}\n* N4: {}\n* P1: {}\n* P2: {}".format(N1, N2, N3, N4, P1, P2))
+
+    osa = ObjectStorageAdapterAPI(USERNAME, PASSWORD, ENDPOINT)
 
     print("\n-> Testing API")
     api_test_print(osa)
     load1(osa, N1)
     print("\n-> Load1")
-    load2(osa, N2, 30)
+    load2(osa, N2, LOAD_SEC)
     print("\n-> Load2")
-    load3(osa, N3, 30, P1, 2, 3)
+    load3(osa, N3, LOAD_SEC, P1, EXISTEND_FILE_ID, NON_EXISTEND_FILE_ID)
     print("\n-> Load3")
     load4(osa, N4, P2, _get_existing_files_list(osa))
     print("\n-> Load4")
-    osa.osa_metrics_to_csv('metrics.csv')
+    osa.osa_metrics_to_csv(OUTPUT_FILE)
     print("\n-> Csv metrics")
     print("=========================================")
 

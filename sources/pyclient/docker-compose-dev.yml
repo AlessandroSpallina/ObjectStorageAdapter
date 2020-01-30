@@ -11,3 +11,10 @@ services:
                 N4: 20
                 P1: 0.9
                 P2: 0.87
+                USERNAME: user@a.a
+                PASSWORD: USERNAME
+                ENDPOINT: http://osa.localhost/fms
+                LOAD_SEC: 30
+                EXISTEND_FILE_ID: 2
+                NON_EXISTENT_FILE_ID: 3
+                OUTPUT_FILE: metrics.csv
