@@ -1,21 +1,17 @@
 package com.localhostgang.unict;
 
-import com.localhostgang.unict.common.Utils;
-
 import java.io.*;
-import java.util.Properties;
 
 public class CSVStream {
-    private final Properties prop = Utils.loadProperties("producer.properties");
-
     private long firstTimestamp = 0;
     private String csvSplitBy = ",";
-    private BufferedReader br = new BufferedReader(new FileReader(prop.getProperty("producer.filepath")));
-    private File file = new File(prop.getProperty("producer.filepath"));
+    private BufferedReader br = new BufferedReader(new FileReader(System.getProperty("METRICS_FILE", "/home/manlio/Scrivania/metrics.csv")));
+    private File file = new File(System.getProperty("METRICS_FILE", "/home/manlio/Scrivania/metrics.csv"));
     private int counter = 0;
     private KProducer kp = new KProducer();
 
     public CSVStream() throws FileNotFoundException {
+        // System.out.println(System.getProperty("METRICS_FILE", "/home/manlio/Scrivania/metrics.csv"));
     }
 
     public void streamFeed() throws IOException, InterruptedException {
@@ -34,7 +30,7 @@ public class CSVStream {
                     Thread.sleep(3000);
                 }
             } else {
-                Thread.sleep(120000);
+                Thread.sleep(300000);
             }
         }
     }

@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a77bf00e-a7fb-43ed-b06f-b239f07554ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/CSVStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/CSVStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/KProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/KProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/java/com/localhostgang/unict/common/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/resources/kafka.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../producer-pojo/src/main/resources/producer.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/org/example/Utils.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +82,7 @@
       <workItem from="1580292982209" duration="11907000" />
       <workItem from="1580315102547" duration="647000" />
       <workItem from="1580333899810" duration="6003000" />
-      <workItem from="1580378287584" duration="5244000" />
+      <workItem from="1580378287584" duration="6051000" />
     </task>
     <servers />
   </component>
