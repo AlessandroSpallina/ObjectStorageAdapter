@@ -44,101 +44,11 @@ public class FileService {
     @Value("${fms.external_url}")
     private String external_url;
 
-
-    // ========= StateMachine Saga ===========
-    private void waitingUpload_s0(File f) {
-        f.setState(FileState.WAITING_UPLOAD);
-        fileRepository.save(f);
-    }
-
-    private void uploadesRollback_s1r(File f){
-        f.setState(FileState.UPLOAD_FAILED);
-        fileRepository.save(f);
-
-        // elimina le copie del file da tutti i minio
-        try {
-            InetAddress nodes[] = InetAddress.getAllByName(minio_host);
-
-            for (InetAddress node : nodes) {
-
-                MinioClient mc = new MinioClient("http://" + node.getHostAddress() + ":" + minio_port, minio_id, minio_pass);
-
-                mc.removeObject(f.getBucket(), f.getObjectname());
-            }
-
-        } catch (InvalidPortException | InvalidEndpointException | InvalidKeyException | NoSuchAlgorithmException | NoResponseException | InvalidResponseException | XmlPullParserException | InvalidBucketNameException | InvalidArgumentException | InsufficientDataException | ErrorResponseException | InternalException | IOException e) {
-            e.printStackTrace();
-        }
-        // --------------------------------------------
-    }
-
-    private void uploades_s1(File f, MultipartFile multipart) {
-        f.setState(FileState.UPLOADES);
-        fileRepository.save(f);
-
-        try {
-            InetAddress nodes[] = InetAddress.getAllByName(minio_host);
-
-            // viene calcolato un hash univoco da salvare in objectname per evitare collisioni sul bucket
-            int objname = (f.getId().toString() + multipart.getOriginalFilename()).hashCode();
-
-            for (InetAddress node : nodes) {
-
-                // istanzia N thread che fanno la routine di upload @findme
-
-
-                // ---------------- routine di upload ----------------
-                // carica file su tutte le istanze nodo[i]
-                MinioClient mc = new MinioClient("http://" + node.getHostAddress() + ":" + minio_port, minio_id, minio_pass);
-                //System.out.println(node.getHostAddress() + ":address - host :" + node.getHostName());
-
-                if (!mc.bucketExists(minio_default_bucket)) {
-                    mc.makeBucket(minio_default_bucket);
-                }
-
-                java.io.File tmp = Miscellaneous.multipartToJavaFileOnFS(multipart);
-                mc.putObject(minio_default_bucket, objname + "_" + multipart.getOriginalFilename(), tmp.toString());
-                tmp.delete();
-                // --------------------------------------------------
-
-            }
-
-            f.setObjectname(objname + "_" + multipart.getOriginalFilename());
-            f.setBucket(minio_default_bucket);
-            fileRepository.save(f);
-
-            available_s2(f);
-
-        } catch (UnknownHostException e) { // questa è eccezione del dns, non c'è rollback qui xk non è nemmeno iniziato
-            e.printStackTrace();
-        } catch (InvalidPortException | InvalidEndpointException | InvalidKeyException | NoSuchAlgorithmException | NoResponseException | InvalidResponseException | XmlPullParserException | InvalidBucketNameException | InvalidArgumentException | RegionConflictException | InsufficientDataException | ErrorResponseException | InternalException | IOException e) { // questa è eccezione di minio, qui rollback!!
-            uploadesRollback_s1r(f);
-            e.printStackTrace();
-        }
-    }
-
-
-    private void available_s2(File f){
-        f.setState(FileState.AVAILABLE);
-        fileRepository.save(f);
-    }
-    // ======================================
-
-
     public File storeMetadata (File file, String email) { // auth.getname() restituisce proprio l'email
         User user = userRepository.findByEmail(email);
         file.setOwner(user);
 
-        waitingUpload_s0(file);
-
         return fileRepository.save(file);
-    }
-
-    public boolean isWaitingFile(Integer id) {
-        if(fileRepository.findById(id).get().getState() == FileState.WAITING_UPLOAD){
-            return true;
-        }
-        return false;
     }
 
     public File storeFile (Integer id, MultipartFile f) {
@@ -155,9 +65,38 @@ public class FileService {
 
         File toSave = temp_file.get();
 
-        uploades_s1(toSave, f);
+        try {
+            InetAddress[] nodes = InetAddress.getAllByName(minio_host);
 
-        return fileRepository.save(toSave);
+            // viene calcolato un hash univoco da salvare in objectname per evitare collisioni sul bucket
+            int objname = (toSave.getId().toString() + f.getOriginalFilename()).hashCode();
+
+            for (InetAddress node : nodes) {
+
+                // ---------------- routine di upload ----------------
+                MinioClient mc = new MinioClient("http://" + node.getHostAddress() + ":" + minio_port, minio_id, minio_pass);
+                //System.out.println(node.getHostAddress() + ":address - host :" + node.getHostName());
+
+                if (!mc.bucketExists(minio_default_bucket)) {
+                    mc.makeBucket(minio_default_bucket);
+                }
+
+                java.io.File tmp = Miscellaneous.multipartToJavaFileOnFS(f);
+                mc.putObject(minio_default_bucket, objname + "_" + f.getOriginalFilename(), tmp.toString());
+                tmp.delete();
+                // --------------------------------------------------
+
+            }
+
+            toSave.setObjectname(objname + "_" + f.getOriginalFilename());
+            toSave.setBucket(minio_default_bucket);
+        } catch (UnknownHostException e) { // questa è eccezione del dns
+            e.printStackTrace();
+        } catch (InvalidPortException | InvalidEndpointException | InvalidKeyException | NoSuchAlgorithmException | NoResponseException | InvalidResponseException | XmlPullParserException | InvalidBucketNameException | InvalidArgumentException | RegionConflictException | InsufficientDataException | ErrorResponseException | InternalException | IOException e) { // questa è eccezione di minio
+            e.printStackTrace();
+        }
+
+        return toSave;
     }
 
 

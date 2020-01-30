@@ -22,9 +22,6 @@ public class File {
 
     private String bucket;
 
-    @Enumerated(EnumType.STRING)
-    private FileState state;
-
     public String getObjectname() {
         return objectname;
     }
@@ -73,11 +70,4 @@ public class File {
         this.filename = filename;
     }
 
-    public FileState getState() {
-        return state;
-    }
-
-    public void setState(FileState state) {
-        this.state = state;
-    }
 }

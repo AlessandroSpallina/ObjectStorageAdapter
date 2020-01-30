@@ -70,14 +70,9 @@ public class FileManagementController {
             return ResponseEntity.status(400).build();
         }
 
-        if(fileService.isWaitingFile(id)) {
-            File ret = fileService.storeFile(id, f);
-            return ResponseEntity.status(200).body(ret);
-        }
+        File ret = fileService.storeFile(id, f);
 
-
-        return ResponseEntity.status(400).build();
-
+        return ResponseEntity.status(200).body(ret);
     }
 
     // delete #5
