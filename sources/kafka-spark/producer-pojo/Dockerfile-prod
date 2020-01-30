@@ -1,9 +1,0 @@
-FROM maven:3-jdk-8 as builder
-WORKDIR /app
-COPY . .
-RUN mvn package
-
-FROM java:8
-WORKDIR /app
-COPY --from=builder /app/target/producer-pojo-1.0-SNAPSHOT.jar ./service.jar
-CMD java -jar service.jar
