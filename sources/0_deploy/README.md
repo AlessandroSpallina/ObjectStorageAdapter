@@ -1,3 +1,5 @@
+## Avviare l'applicazione
+
 Una volta scaricato il progetto, recati nella directory del progetto e apri il terminale.
 
 ```
@@ -26,3 +28,5 @@ oppure
 ```
 docker-compose -f docker-compose-dev-nginx up
 ```
+
+## Esempi di richieste
