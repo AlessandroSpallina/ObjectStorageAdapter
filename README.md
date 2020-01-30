@@ -45,3 +45,5 @@ Di seguito alcuni spunti per eventuali sviluppi futuri relativi la pt1:
 * Utilizzo best practices docker orientate alla security (gestione user sul container)
 * Salvare le password su db non in chiaro (situazione attuale), ma come hash bcrypt
 * Evitare di ritornare all'utente id che corrispondono alle primary key del database
+
+#### Per la parte 2, vedere branch apposito
