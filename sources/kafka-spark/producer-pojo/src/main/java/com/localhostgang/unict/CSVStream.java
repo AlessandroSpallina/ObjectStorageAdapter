@@ -5,17 +5,27 @@ import java.io.*;
 public class CSVStream {
     private long firstTimestamp = 0;
     private String csvSplitBy = ",";
-    private BufferedReader br = new BufferedReader(new FileReader(System.getProperty("METRICS_FILE", "/home/manlio/Scrivania/metrics.csv")));
-    private File file = new File(System.getProperty("METRICS_FILE", "/home/manlio/Scrivania/metrics.csv"));
+
     private int counter = 0;
     private KProducer kp = new KProducer();
 
-    public CSVStream() throws FileNotFoundException {
+    public CSVStream() {
         // System.out.println(System.getProperty("METRICS_FILE", "/home/manlio/Scrivania/metrics.csv"));
     }
 
-    public void streamFeed() throws IOException, InterruptedException {
+    public void streamFeed() throws InterruptedException, IOException {
         while(true) {
+
+            BufferedReader br = null;
+            try {
+                br = new BufferedReader(new FileReader(System.getProperty("METRICS_FILE", "/home/manlio/Scrivania/metrics.csv")));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                System.out.println("Non ho trovato il file, riprovo tra poco");
+                Thread.sleep(1000);
+            }
+            File file = new File(System.getProperty("METRICS_FILE", "/home/manlio/Scrivania/metrics.csv"));
+
             if(firstTimestamp == 0 || firstTimestamp != file.lastModified()) {
                 firstTimestamp = file.lastModified();
                 String line;
