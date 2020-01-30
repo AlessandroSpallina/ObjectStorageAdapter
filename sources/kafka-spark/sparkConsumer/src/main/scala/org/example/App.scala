@@ -19,19 +19,19 @@ object App {
 
     val utils = Utils.loadProperties("application.properties")
 
-    val ssc = new StreamingContext(conf, Seconds(utils.getProperty("consumer.batchtime").toLong))
+    val ssc = new StreamingContext(conf, Seconds(sys.env.getOrElse("BATCH_TIME", "60").toLong))
 
     val kafkaParams = Map[String, Object] (
-      "bootstrap.servers" -> "localhost:9092",
+      "bootstrap.servers" -> sys.env.getOrElse("BROKER_HOST", "localhost:9092"),
       "key.deserializer" -> classOf[StringDeserializer],
       "value.deserializer" -> classOf[StringDeserializer],
-      "group.id" -> "consumer-group",
+      "group.id" -> sys.env.getOrElse("CONSUMER_GROUP_ID","consumer-group"),
       "auto.offset.reset" -> "latest",
       "enable.auto.commit" -> (false: java.lang.Boolean)
     )
 
     // val topic = Array("metric")
-    val topic = Array("osa-metrics")
+    val topic = Array(sys.env.getOrElse("TOPIC_NAME","osa-metrics"))
     val stream = KafkaUtils.createDirectStream[String, String](
       ssc,
       PreferConsistent,
