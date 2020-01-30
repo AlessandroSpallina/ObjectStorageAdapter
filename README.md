@@ -5,6 +5,9 @@ Sviluppato da Alessandro Spallina (O55000439) e Manlio Puglisi (O55000433)
 Progetto b: Object Storage Adapter, DB1 (MySQL), GW1 (nginx), Stats2.
 
 ### Prima parte - Homework 1
+
+![alt text](https://raw.githubusercontent.com/PManlio/ObjectStorageAdapter/pt2/readmeimg/osa-homework1.png?token=AHHOYZ5SZLHRK33A34NI3RK6HRCR4)
+
 Per la prima parte sono stati sviluppati e dockerizzati l'API Gateway, il File Management Service e il Client.
 
 
@@ -20,6 +23,6 @@ I vari valori richiesti dalla consegna (n1, n2, n3, n4, p1, p2) sono specificati
 Il file .csv viene salvato su file system, anche il nome del file e il path dove viene salvato sono parametrizzati.
 
 #### Avviare l'applicazione
-Istruzioni Docker-compose: L I N K - A G G I U N G E R E
+Istruzioni Docker-compose: [link](https://github.com/PManlio/ObjectStorageAdapter/tree/pt2/sources/0_deploy/docker-compose).
 
 Esempi di richieste sono specificati nel README del link sopracitato.
