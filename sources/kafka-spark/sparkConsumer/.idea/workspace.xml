@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a77bf00e-a7fb-43ed-b06f-b239f07554ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/example/Utils.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,7 @@
       <workItem from="1580292982209" duration="11907000" />
       <workItem from="1580315102547" duration="647000" />
       <workItem from="1580333899810" duration="6003000" />
-      <workItem from="1580378287584" duration="5099000" />
+      <workItem from="1580378287584" duration="5244000" />
     </task>
     <servers />
   </component>
@@ -86,6 +88,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="693" y="287" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580385714877">
+      <screen x="0" y="32" width="1920" height="1013" />
+    </state>
+    <state x="693" y="287" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.32.1920.1013@0.32.1920.1013" timestamp="1580385714877" />
     <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580334513571">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>

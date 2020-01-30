@@ -7,8 +7,6 @@ import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
 import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
 
-import scala.collection.mutable.ArrayBuffer
-
 /**
  * Hello world!
  *
@@ -16,8 +14,6 @@ import scala.collection.mutable.ArrayBuffer
 object App {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("spark-consumer-kafka")
-
-    val utils = Utils.loadProperties("application.properties")
 
     val ssc = new StreamingContext(conf, Seconds(sys.env.getOrElse("BATCH_TIME", "60").toLong))
 
