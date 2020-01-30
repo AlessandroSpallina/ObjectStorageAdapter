@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a77bf00e-a7fb-43ed-b06f-b239f07554ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../producer-pojo/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$$anonfun$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/provaScala-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +68,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../producer-pojo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="SvnConfiguration">
@@ -76,7 +85,9 @@
       <workItem from="1580123152275" duration="9522000" />
       <workItem from="1580219291320" duration="8438000" />
       <workItem from="1580292982209" duration="11907000" />
-      <workItem from="1580315102547" duration="342000" />
+      <workItem from="1580315102547" duration="647000" />
+      <workItem from="1580333899810" duration="6003000" />
+      <workItem from="1580378287584" duration="3062000" />
     </task>
     <servers />
   </component>
@@ -84,29 +95,37 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580315147465">
+    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580334513571">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl/0.32.1920.1013@0.32.1920.1013" timestamp="1580315147465" />
-    <state width="914" height="184" key="GridCell.Tab.0.bottom" timestamp="1580313907199">
+    <state x="1223" y="296" width="424" height="484" key="FileChooserDialogImpl/0.32.1920.1013@0.32.1920.1013" timestamp="1580334513571" />
+    <state width="1874" height="268" key="GridCell.Tab.0.bottom" timestamp="1580380692437">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="914" height="184" key="GridCell.Tab.0.bottom/0.32.1920.1013@0.32.1920.1013" timestamp="1580313907199" />
-    <state width="914" height="184" key="GridCell.Tab.0.center" timestamp="1580313907198">
+    <state width="1874" height="268" key="GridCell.Tab.0.bottom/0.32.1920.1013@0.32.1920.1013" timestamp="1580380692437" />
+    <state width="1874" height="268" key="GridCell.Tab.0.center" timestamp="1580380692436">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="914" height="184" key="GridCell.Tab.0.center/0.32.1920.1013@0.32.1920.1013" timestamp="1580313907198" />
-    <state width="914" height="184" key="GridCell.Tab.0.left" timestamp="1580313907198">
+    <state width="1874" height="268" key="GridCell.Tab.0.center/0.32.1920.1013@0.32.1920.1013" timestamp="1580380692436" />
+    <state width="1874" height="268" key="GridCell.Tab.0.left" timestamp="1580380692435">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="914" height="184" key="GridCell.Tab.0.left/0.32.1920.1013@0.32.1920.1013" timestamp="1580313907198" />
-    <state width="914" height="184" key="GridCell.Tab.0.right" timestamp="1580313907198">
+    <state width="1874" height="268" key="GridCell.Tab.0.left/0.32.1920.1013@0.32.1920.1013" timestamp="1580380692434" />
+    <state width="1874" height="268" key="GridCell.Tab.0.right" timestamp="1580380692436">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
-    <state width="914" height="184" key="GridCell.Tab.0.right/0.32.1920.1013@0.32.1920.1013" timestamp="1580313907198" />
+    <state width="1874" height="268" key="GridCell.Tab.0.right/0.32.1920.1013@0.32.1920.1013" timestamp="1580380692436" />
+    <state x="305" y="458" width="471" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580338729083">
+      <screen x="0" y="32" width="1920" height="1013" />
+    </state>
+    <state x="305" y="458" width="471" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.32.1920.1013@0.32.1920.1013" timestamp="1580338729083" />
     <state x="200" y="243" width="1422" height="603" key="new project wizard" timestamp="1580123661999">
       <screen x="0" y="32" width="1920" height="1013" />
     </state>
     <state x="200" y="243" width="1422" height="603" key="new project wizard/0.32.1920.1013@0.32.1920.1013" timestamp="1580123661999" />
+    <state x="204" y="254" width="672" height="678" key="search.everywhere.popup" timestamp="1580338906933">
+      <screen x="0" y="32" width="1920" height="1013" />
+    </state>
+    <state x="204" y="254" width="672" height="678" key="search.everywhere.popup/0.32.1920.1013@0.32.1920.1013" timestamp="1580338906933" />
   </component>
 </project>
