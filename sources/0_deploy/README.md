@@ -21,12 +21,12 @@ cd docker-compose
 
 A seconda di quale delle due build tu abbia eseguito, esegui rispettivamente
 ```
-docker-compose -f docker-compose-prod-nginx up
+docker-compose -f ./docker-compose-prod-nginx.yml up
 
 ```
 oppure
 ```
-docker-compose -f docker-compose-dev-nginx up
+docker-compose -f ./docker-compose-dev-nginx.yml up
 ```
 
 ## Esempi di richieste
