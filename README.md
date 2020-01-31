@@ -22,4 +22,8 @@ I messaggi vengono ricevuti dal consumer e filtrati per "lettura" (nel caso in c
 Se è dunque vero che non è stato fatto un calcolo esaustivo delle metriche, i file di testo che vengono salvati portano comunque un elenco di messaggi, accumulati in un batch time, che esplicitano il tempo di risposta del server alla chiamata simulata, rendendo quindi possibile una futura analisi dei dati ottenuti.
 Al seguente link le informazioni per avviare la comunicazione tra spout, broker e consumer: [link](https://github.com/PManlio/ObjectStorageAdapter/tree/pt2/sources/kafka-spark)
 
+### Sviluppi futuri
+* Attualmente si utilizza un ingress anteposto all'API Gateway sviluppato per l'homework 1, si sarebbe potuto sostituire l'API Gateway con un ingress opportunamente configurato.
+* Si sarebbe potuto inserire un meccanismo di attesa (waitDB) del database sul microservizio File Management Service al fine di ottenere un deployment più veloce
+
 ### Per la parte 1, vedere branch master
