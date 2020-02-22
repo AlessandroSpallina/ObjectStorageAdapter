@@ -6,13 +6,13 @@ Progetto b: Object Storage Adapter, DB1 (MySQL), GW1 (nginx), Stats2.
 
 ### Seconda parte - Homework 2
 
-![alt text](https://raw.githubusercontent.com/PManlio/ObjectStorageAdapter/master/readmeimg/osa-homework2.png?token=AHHOYZ3Z5XZFK5DFURYZUCC6HSIGA)
+![alt text](https://github.com/AlessandroSpallina/ObjectStorageAdapter/blob/master/readmeimg/osa-homework2.png?raw=true)
 
 Come richiesto da specifiche, è stato eseguito il porting su Kubernetes di quanto già realizzato. 
 Nelle directories [link](https://github.com/PManlio/ObjectStorageAdapter/tree/pt2/sources/0_deploy/k8s/production-nginx) e [link](https://github.com/PManlio/ObjectStorageAdapter/tree/pt2/sources/0_deploy/k8s/development-nginx) è presente il necessario per effettuare il deploy.
 
 Di seguito una macchina a stati relativa lo stato di File Management Service durante un upload, è stato quindi implementato il pattern Saga:
-![alt text](https://raw.githubusercontent.com/PManlio/ObjectStorageAdapter/master/readmeimg/osa-homework2-saga.png?token=AHHOYZ6H7ICHD7UFYOTNSY26HSI6M)
+![alt text](https://github.com/AlessandroSpallina/ObjectStorageAdapter/blob/master/readmeimg/osa-homework2-saga.png?raw=true)
 
 La parte riguardante Kafka e Spark ha alcune lacune.
 Sono stati riscontrati diversi problemi nel deployment su Kubernetes a causa di una nostra negligenza per cui non abbiamo direttamente dockerizzato lo spout e il consumer spark, arrivando al punto di non riuscire ad avere questa parte pronta su k8s per la scadenza del progetto, poichè rimaniamo bloccati su problemi quali la mancanza del manifest java nel jar dello spout.
