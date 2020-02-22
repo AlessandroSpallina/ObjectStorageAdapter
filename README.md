@@ -6,7 +6,7 @@ Progetto b: Object Storage Adapter, DB1 (MySQL), GW1 (nginx), Stats2.
 
 ### Prima parte - Homework 1
 
-![alt text](https://raw.githubusercontent.com/PManlio/ObjectStorageAdapter/master/readmeimg/osa-homework1.png?token=AHHOYZ62UD5WDQPWP2X5NQ26HSH4E)
+![alt text](https://raw.githubusercontent.com/AlessandroSpallina/ObjectStorageAdapter/master/readmeimg/osa-homework1.png)
 
 Per la prima parte sono stati sviluppati e dockerizzati l'API Gateway, il File Management Service e il Client.
 
